@@ -20,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void gottolist(View view)
+    {
+        Intent intent = new Intent(this, EventListActivity.class);
+        startActivity(intent);
+    }
 
 
 
