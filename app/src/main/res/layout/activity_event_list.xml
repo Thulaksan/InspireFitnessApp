@@ -9,10 +9,17 @@
     android:background="@drawable/space_background_1"
     >
 
+    <ImageView
+        android:id="@+id/CreateEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CreateEvent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:backgroundTint="@color/cardview_light_background"
         android:cacheColorHint="@color/cardview_light_background"
         android:divider="@color/cardview_light_background"
@@ -21,5 +28,5 @@
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:listSelector="#8dd9de"
-        android:scrollbars="horizontal|vertical"/>
+        android:scrollbars="horizontal|vertical" />
 </GridLayout>
