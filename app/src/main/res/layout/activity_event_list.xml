@@ -24,7 +24,6 @@
         android:cacheColorHint="@color/cardview_light_background"
         android:divider="@color/cardview_light_background"
         android:dividerHeight="1dip"
-        android:entries="@color/cardview_light_background"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:listSelector="#8dd9de"

@@ -10,14 +10,14 @@ import android.widget.ListView;
 
 public class EventListActivity extends AppCompatActivity {
     ListView listv;
-    String[] eventTypes= new String[]{"apples", "apirs", "donkys", "newbirds", "cats", "Dogs"};
+    String[] ev= new String[]{"apples", "apirs", "donkys", "newbirds", "cats", "Dogs"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         listv = (ListView) findViewById(R.id.ListView);
-        ArrayAdapter adapter = new ArrayAdapter(EventListActivity.this,android.R.layout.simple_expandable_list_item_1,eventTypes);
+        ArrayAdapter adapter = new ArrayAdapter(EventListActivity.this,android.R.layout.simple_expandable_list_item_1,ev);
         listv.setAdapter(adapter);
     }
     public void CreateEvent(View view)

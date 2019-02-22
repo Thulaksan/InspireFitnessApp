@@ -33,6 +33,7 @@
         android:cacheColorHint="@android:color/holo_blue_bright"
         android:divider="@color/cardview_light_background"
         android:dividerHeight="1dip"
+        android:listSelector="#8dd9de"
         android:scrollbars="none|horizontal|vertical" />
 
 </RelativeLayout>
