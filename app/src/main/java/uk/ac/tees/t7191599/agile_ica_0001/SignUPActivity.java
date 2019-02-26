@@ -1,8 +1,8 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +31,7 @@ public class SignUPActivity extends AppCompatActivity {
     }
 
 
-    public void SignUp(View V) {
+    public void SignUp(View V){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setTimestampsInSnapshotsEnabled(true)
@@ -40,32 +40,33 @@ public class SignUPActivity extends AppCompatActivity {
 
 
         et_firstname = findViewById(R.id.et_firstname);
-        et_lastname = findViewById(R.id.et_lastname);
+        et_lastname= findViewById(R.id.et_lastname);
         et_email = findViewById(R.id.et_email);
-        et_Conform_Email = findViewById(R.id.et_Conform_Email);
+        et_Conform_Email= findViewById(R.id.et_Conform_Email);
         et_Password = findViewById(R.id.et_Password);
-        et_Conform_Password = findViewById(R.id.et_Conform_Password);
+        et_Conform_Password= findViewById(R.id.et_Conform_Password);
 
 
-        String TempPass = "";
-        String TempEmail = "";
+        String TempPass="";
+        String TempEmail= "";
 
-        if (et_email.getText().toString().equals(et_Conform_Email.getText().toString())) {
-            TempEmail = et_email.getText().toString();
-        } else {
+        if(et_email.getText().toString().equals(et_Conform_Email.getText().toString())){
+            TempEmail= et_email.getText().toString();
+        }else{
             //Send Form Back to user
         }
         String Pass1 = Utility.getMd5(et_Password.getText().toString());
         String Pass2 = Utility.getMd5(et_Conform_Password.getText().toString());
-        if (Pass1.equals(Pass2)) {
+        if(Pass1.equals(Pass2)){
             TempPass = Pass1;
-        } else {
+        }else{
             //Send Form Back to user
         }
 
 
+
         User TempUser = new User();
-        TempUser.First_Name = et_firstname.getText().toString();
+        TempUser.First_Name= et_firstname.getText().toString();
         TempUser.Second_Name = et_lastname.getText().toString();
         TempUser.Email = TempEmail;
         TempUser.Password = TempPass;
@@ -90,6 +91,9 @@ public class SignUPActivity extends AppCompatActivity {
                         System.out.println("Worked");
                     }
                 });
+
+
+
 
 
     }
