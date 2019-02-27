@@ -7,19 +7,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class EventListActivity extends AppCompatActivity {
-    ListView listv;
-    String[] ev= new String[]{"apples", "apirs", "donkys", "newbirds", "cats", "Dogs"};
 
+    private eventAdapter adapter;
+    private ListView listViewEvents;
+    private ArrayList<Event> events = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
-        listv = (ListView) findViewById(R.id.ListView);
-        ArrayAdapter adapter = new ArrayAdapter(EventListActivity.this,android.R.layout.simple_expandable_list_item_1,ev);
-        listv.setAdapter(adapter);
+        populateListView();
+
+
     }
+
+
+    public void populateListView()
+    {
+        listViewEvents = (ListView) findViewById(R.id.eventListView);
+        events.add(new Event("Step Tracker","22/06/2020"));
+        events.add(new Event("Workout","01/12/2019"));
+        events.add(new Event("Meal Plan","14/08/2019"));
+        events.add(new Event("Workout","11/12/2019"));
+        adapter= new eventAdapter(this,events);
+        listViewEvents.setAdapter(adapter);
+
+    }
+
+
+
+
     public void CreateEvent(View view)
     {
         Intent intent = new Intent(this, CreateEventActivity.class);
