@@ -27,7 +27,8 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".EventListActivity" />
-        <activity android:name=".CreateEventActivity"></activity>
+        <activity android:name=".CreateEventActivity" />
+        <activity android:name=".NutritionPlanner"></activity>
     </application>
 
 </manifest>

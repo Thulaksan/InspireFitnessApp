@@ -1,10 +1,12 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,5 +39,27 @@ public class CreateEventActivity extends AppCompatActivity {
         };
         lv.setAdapter(stringAdapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 2)
+                {
+
+                }
+
+
+
+
+
+
+            }
+        });
+
+
+
+
     }
+
+
+
 }
