@@ -12,8 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_date"
         android:layout_centerVertical="true"
-        android:textSize="24sp"
-        android:hint="Name"/>
+        android:hint="Name"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView_date"
@@ -23,8 +24,9 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="15dp"
         android:layout_toEndOf="@+id/image"
-        android:textSize="24sp"
-        android:hint="Date"/>
+        android:hint="Date"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/image"
