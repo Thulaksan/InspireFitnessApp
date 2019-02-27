@@ -138,6 +138,7 @@
                 android:layout_centerVertical="true"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24dip"
+                android:onClick="SignUp"
                 android:text="Sign Up" />
         </RelativeLayout>
 
