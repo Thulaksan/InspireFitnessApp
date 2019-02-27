@@ -42,10 +42,39 @@ public class CreateEventActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 2)
+                if (position == 0)
                 {
 
+
+
                 }
+                if (position == 1)
+                {
+
+
+
+                }
+
+                if (position == 2)
+                {
+                    Intent intent = new Intent(view.getContext(), NutritionPlanner.class);
+                    startActivity(intent);
+                }
+
+                if (position == 3)
+                {
+
+
+
+                }
+
+                if (position == 4)
+                {
+
+
+                }
+
+
 
 
 
