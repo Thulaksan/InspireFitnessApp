@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.NutritionPlanner"
+    android:background="@drawable/space_background_1">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logo" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/foodSearchBar"
+        android:layout_marginTop="35dp"
+        android:background="@color/cardview_light_background" />
+
+    <EditText
+        android:id="@+id/foodSearchBar"
+        android:layout_width="250dip"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logo"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="17dp"
+        android:background="@color/cardview_light_background"
+        android:ems="10"
+        android:hint="Search For Food"
+        android:inputType="text"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="18dip" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/foodSearchBar"
+        android:layout_marginEnd="15dp"
+        android:text="Search" />
+</RelativeLayout>

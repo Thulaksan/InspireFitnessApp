@@ -15,7 +15,7 @@ public class EventListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
-        listv = (ListView) findViewById(R.id.ListView);
+        listv = (ListView) findViewById(R.id.eventListView);
         ArrayAdapter adapter = new ArrayAdapter(EventListActivity.this, android.R.layout.simple_expandable_list_item_1, ev);
         listv.setAdapter(adapter);
     }
