@@ -29,7 +29,7 @@ public class LogInActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignUPActivity.class);
         startActivity(intent);
     }
-    public void LoggedIn() {
+    public void LoggedIn(View view) {
         System.out.println("Thomas");
         Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
@@ -37,7 +37,7 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
-    public void signIn(View view) {
+    public void signIn(final View view) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
@@ -66,7 +66,7 @@ public class LogInActivity extends AppCompatActivity {
                         if (TempUser.Password.equals(Password)) {
 
                             Toast.makeText(LogInActivity.this, TempUser.Email+" "+TempUser.First_Name+" "+TempUser.Second_Name, Toast.LENGTH_SHORT).show();
-                            LoggedIn();
+                            LoggedIn(view);
                         }
 
                     }

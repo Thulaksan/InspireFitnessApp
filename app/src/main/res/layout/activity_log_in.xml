@@ -76,7 +76,6 @@
                 android:onClick="LoggedIn"
                 android:text="Login"
                 android:textSize="24sp"
-                android:onClick="signIn"
                 tools:text="Login" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
