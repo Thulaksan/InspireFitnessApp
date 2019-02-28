@@ -24,8 +24,6 @@ public class EventListActivity extends AppCompatActivity {
 
 
     }
-
-
     public void populateListView()
     {
         listViewEvents = (ListView) findViewById(R.id.eventListView);

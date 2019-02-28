@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "504429389317",
+    "firebase_url": "https://agiledevinspire-1c45d.firebaseio.com",
+    "project_id": "agiledevinspire-1c45d",
+    "storage_bucket": "agiledevinspire-1c45d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504429389317:android:3d70ec3b9170dd5a",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.t7191599.agile_ica_0001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504429389317-fdnsin499mqui189kl3juea84pfmci8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.ac.tees.t7191599.agile_ica_0001",
+            "certificate_hash": "290fea94cfa4e83e0b9c446291bc83fe9d334ddc"
+          }
+        },
+        {
+          "client_id": "504429389317-jp80dug95poajqql1l3lqj059pjb9279.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.ac.tees.t7191599.agile_ica_0001",
+            "certificate_hash": "4c94116183e0d3ea0b1c905e6bb2ce26102f2947"
+          }
+        },
+        {
+          "client_id": "504429389317-ai0pmhnnoeb4fb280og67jm7j7a30p3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL1uUoSIdmRV56QDQEhjaF6Y0DjVPBoq8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504429389317-ai0pmhnnoeb4fb280og67jm7j7a30p3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

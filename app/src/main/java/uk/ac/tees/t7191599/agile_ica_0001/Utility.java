@@ -5,10 +5,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
-
 public class Utility {
-    public static String getMd5(String input)
-    {
+    public static String getMd5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(input.getBytes());
@@ -18,9 +16,7 @@ public class Utility {
                 hashtext = "0" + hashtext;
             }
             return hashtext;
-        }
-        
-        catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }
