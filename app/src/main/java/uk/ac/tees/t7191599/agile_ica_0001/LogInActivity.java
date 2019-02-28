@@ -31,7 +31,7 @@ public class LogInActivity extends AppCompatActivity {
     }
     public void LoggedIn(View view) {
         System.out.println("Thomas");
-        Intent intent = new Intent(this, LogInActivity.class);
+        Intent intent = new Intent(this, EventListActivity.class);
         startActivity(intent);
     }
 
