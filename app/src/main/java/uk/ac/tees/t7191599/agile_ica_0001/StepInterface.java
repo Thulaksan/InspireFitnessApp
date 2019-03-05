@@ -40,29 +40,21 @@ public class StepInterface extends AppCompatActivity implements SensorEventListe
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
 
-      //  Button Start = findViewById(R.id.btn_start);
+        Button Start = findViewById(R.id.btn_start);
 
+        Start.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View arg0) {
+                this.BtnStart();
+            }
 
-       // Start.setOnClickListener(new android.view.View.OnClickListener() {
-            //@Override
-          //  public void onClick(android.view.View arg0) {
-               // this.BtnStart();
-          //  }
-
-           // private void BtnStart() {
-               // numSteps =0;
-               // sensorManager.registerListener(StepInterface.this,accel,SensorManager.SENSOR_DELAY_FASTEST);
-          //  }
-       // });
-
+            private void BtnStart() {
+                numSteps =0;
+                sensorManager.registerListener(StepInterface.this,accel,SensorManager.SENSOR_DELAY_FASTEST);
+            }
+        });
 
     }
-
-
-
-
-
-
 
 
     @Override
