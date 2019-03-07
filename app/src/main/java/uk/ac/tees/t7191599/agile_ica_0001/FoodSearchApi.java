@@ -65,10 +65,8 @@ public class FoodSearchApi extends AsyncTask {
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
 
-        if (!sendingData.equals(""))
-        {
-            NutritionPlanner.displayArr.add(sendingData);
-        }
+            NutritionPlanner.gettingfood = sendingData;
+
 
 
     }

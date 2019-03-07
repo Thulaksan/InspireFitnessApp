@@ -15,9 +15,14 @@ public class NutritionPlanner extends AppCompatActivity {
     Button searchButton;
     EditText foodName;
     ListView listView;
-    public static ArrayList displayArr;
     ArrayAdapter adapter;
-    FoodSearchApi foodSearchApi;
+
+    ArrayList displayArr;
+    public static String gettingfood = "";
+    private int reccommendedKcal = 2500;
+    private int currentKcal;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,7 @@ public class NutritionPlanner extends AppCompatActivity {
         searchButton = findViewById(R.id.searchButton);
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
+        listView.setAdapter(adapter);
 
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +44,13 @@ public class NutritionPlanner extends AppCompatActivity {
                 FoodSearchApi foodSearchApi = new FoodSearchApi();
                 foodSearchApi.setFoodName(foodName.getText().toString());
                 foodSearchApi.execute();
-                listView.setAdapter(adapter);
+
+                if (!gettingfood.equals(""))
+                {
+                    displayArr.add(gettingfood);
+                }
+
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -48,13 +60,17 @@ public class NutritionPlanner extends AppCompatActivity {
                 if (position == position)
                 {
                     displayArr.remove(position);
-                    listView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
-
-
     }
+
+
+
+
+
+
 //    public void saveButton(View save)
 //    {
 //        String date = getCurrentTimeUsingDate();
