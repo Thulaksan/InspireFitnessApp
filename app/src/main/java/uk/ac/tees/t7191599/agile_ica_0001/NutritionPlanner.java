@@ -59,8 +59,8 @@ public class NutritionPlanner extends AppCompatActivity {
                     displayArr.add(gettingfood);
                     kCalArray.add(gettingKcal);
 
-                    displayArr.add(1, "Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
-                    displayArr.remove(2);
+                    //displayArr.add(1, "Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
+                    //displayArr.remove(2);
                 }
 
                 adapter.notifyDataSetChanged();
