@@ -9,7 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class NutritionPlanner extends AppCompatActivity {
     Button searchButton;
@@ -17,10 +21,13 @@ public class NutritionPlanner extends AppCompatActivity {
     ListView listView;
     ArrayAdapter adapter;
 
-    ArrayList displayArr;
     public static String gettingfood = "";
+    public static int gettingKcal = 0;
+    ArrayList displayArr;
+    List<Integer> kCalArray;
+
     private int reccommendedKcal = 2500;
-    private int currentKcal;
+    private int currentKcal = 0;
 
 
 
@@ -31,6 +38,8 @@ public class NutritionPlanner extends AppCompatActivity {
 
         foodName = (EditText) findViewById(R.id.foodSearchBar);
         displayArr = new ArrayList();
+        kCalArray = new ArrayList();
+        displayArr.add("Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
         searchButton = findViewById(R.id.searchButton);
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
@@ -48,6 +57,10 @@ public class NutritionPlanner extends AppCompatActivity {
                 if (!gettingfood.equals(""))
                 {
                     displayArr.add(gettingfood);
+                    kCalArray.add(gettingKcal);
+
+                    displayArr.add(1, "Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
+                    displayArr.remove(2);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -61,13 +74,30 @@ public class NutritionPlanner extends AppCompatActivity {
                 {
                     displayArr.remove(position);
                     adapter.notifyDataSetChanged();
+
                 }
             }
         });
     }
 
+    public int totalCalorie()
+    {
+        int numb = 0;
 
+        if (kCalArray.isEmpty())
+        {
+            numb = 0;
+        }
+        else
+        {
+            for (int i = 0; i < kCalArray.size(); i++)
+            {
 
+                numb = numb + kCalArray.get(i);
+            }
+        }
+        return numb;
+    }
 
 
 
