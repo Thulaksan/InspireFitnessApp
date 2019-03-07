@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/agile_dev.iml" filepath="$PROJECT_DIR$/agile_dev.iml" />
-      <module fileurl="file://$PROJECT_DIR$/agile_dev.iml" filepath="$PROJECT_DIR$/agile_dev.iml" />
-      <module fileurl="file://$PROJECT_DIR$/agile_dev1.iml" filepath="$PROJECT_DIR$/agile_dev1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/agile_dev2.iml" filepath="$PROJECT_DIR$/agile_dev2.iml" />
+      <module fileurl="file://C:\Users\Powerman984\Documents\Uni_Work\Year_2\Agile\agile_dev\agile_dev1.iml" filepath="C:\Users\Powerman984\Documents\Uni_Work\Year_2\Agile\agile_dev\agile_dev1.iml" />
+      <module fileurl="file://C:\Users\Powerman984\Documents\Uni_Work\Year_2\Agile\agile_dev\agile_dev2.iml" filepath="C:\Users\Powerman984\Documents\Uni_Work\Year_2\Agile\agile_dev\agile_dev2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
