@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gottoProfile(View view) {
+        Intent intent = new Intent(this, UserProfile.class);
+        startActivity(intent);
+    }
 
     //Andrew Powell
 
