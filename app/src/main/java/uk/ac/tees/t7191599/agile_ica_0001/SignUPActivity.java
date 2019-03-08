@@ -1,28 +1,24 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import java.util.ArrayList;
 
 public class SignUPActivity extends AppCompatActivity {
 
-    private EditText et_firstname;
-    private EditText et_lastname;
+    private ArrayList<EditText> inputs = new ArrayList<EditText>();
+    private ProgressBar ProgressBar;
     private EditText et_email;
-    private EditText et_Conform_Email;
+    private EditText et_Confirm_Email;
     private EditText et_Password;
-    private EditText et_Conform_Password;
-
+    private EditText et_Confirm_Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,67 +26,100 @@ public class SignUPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
     }
 
-
-    public void SignUp(View V) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setTimestampsInSnapshotsEnabled(true)
-                .build();
-        db.setFirestoreSettings(settings);
+    public void SignUp(View view) {
+        Firebase fb = new Firebase();
 
 
-        et_firstname = findViewById(R.id.et_firstname);
-        et_lastname = findViewById(R.id.et_lastname);
         et_email = findViewById(R.id.et_email);
-        et_Conform_Email = findViewById(R.id.et_Conform_Email);
+        et_Confirm_Email = findViewById(R.id.et_Confirm_Email);
         et_Password = findViewById(R.id.et_Password);
-        et_Conform_Password = findViewById(R.id.et_Conform_Password);
+        et_Confirm_Password = findViewById(R.id.et_Confirm_Password);
+        ProgressBar = findViewById(R.id.ProgressBar);
 
+        inputs.add(et_email);
+        inputs.add(et_Confirm_Email);
+        inputs.add(et_Password);
+        inputs.add(et_Confirm_Password);
+
+        for (EditText edit : inputs) {
+            if (edit.getText().toString().trim().equals("")) {
+
+                edit.setError("This Is Required");
+                edit.requestFocus();
+                return;
+            }
+        }
 
         String TempPass = "";
         String TempEmail = "";
 
-        if (et_email.getText().toString().equals(et_Conform_Email.getText().toString())) {
-            TempEmail = et_email.getText().toString();
+        if (et_email.getText().toString().trim().equals(et_Confirm_Email.getText().toString().trim())) {
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(et_email.getText().toString().trim()).matches()) {
+                et_email.setError("This Needs to be an Email Address");
+                et_email.requestFocus();
+                return;
+
+            } else {
+                TempEmail = et_email.getText().toString().trim();
+            }
+
         } else {
-            //Send Form Back to user
+
+            et_email.setError("Emails Need to Match");
+            et_email.requestFocus();
+            return;
         }
-        String Pass1 = Utility.getMd5(et_Password.getText().toString());
-        String Pass2 = Utility.getMd5(et_Conform_Password.getText().toString());
-        if (Pass1.equals(Pass2)) {
-            TempPass = Pass1;
+
+        if (et_Password.getText().toString().trim().equals(et_Confirm_Password.getText().toString().trim())) {
+
+            if (et_Password.getText().toString().trim().length() <= 6) {
+                Toast.makeText(SignUPActivity.this, "Passwords Need to be greater than 6 characters", Toast.LENGTH_SHORT).show();
+                et_Password.setError("Passwords Need to be greater than 6 characters");
+                et_Password.requestFocus();
+                return;
+            } else {
+
+                TempPass = et_Password.getText().toString().trim();
+            }
+
         } else {
-            //Send Form Back to user
+            et_Confirm_Password.setError("Passwords Need to Match");
+            et_Confirm_Password.requestFocus();
+            return;
         }
 
+        ProgressBar.setVisibility(View.VISIBLE);
+        fb.setAct(this);
+        fb.SignUp(TempEmail,TempPass);
+        Intent intent = new Intent(this, First_loginActivity.class);
+        startActivity(intent);
+        }
 
-        User TempUser = new User();
-        TempUser.First_Name = et_firstname.getText().toString();
-        TempUser.Second_Name = et_lastname.getText().toString();
-        TempUser.Email = TempEmail;
-        TempUser.Password = TempPass;
-
-        db.collection("Users")
-                .add(TempUser)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(SignUPActivity.this, "Signedup", Toast.LENGTH_SHORT).show();
-                        Log.d("Signup", "DocumentSnapshot added with ID: " + documentReference.getId());
-                        System.out.println("Worked");
-
-                        //Goto User Page
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(SignUPActivity.this, "SignupError", Toast.LENGTH_SHORT).show();
-                        Log.w("Signup", "Error adding document", e);
-                        System.out.println("Worked");
-                    }
-                });
-
-
-    }
+//        User TempUser = new User();
+//
+//        TempUser.Email = TempEmail;
+//        TempUser.Password = TempPass;
+//
+//        db.collection("Users")
+//                .add(TempUser)
+//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        Toast.makeText(SignUPActivity.this, "Signedup", Toast.LENGTH_SHORT).show();
+//                        Log.d("Signup", "DocumentSnapshot added with ID: " + documentReference.getId());
+//                        System.out.println("Worked");
+//
+//                        //Goto User Page
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(SignUPActivity.this, "SignupError", Toast.LENGTH_SHORT).show();
+//                        Log.w("Signup", "Error adding document", e);
+//                        System.out.println("Worked");
+//                    }
+//                });
+//    }
 }

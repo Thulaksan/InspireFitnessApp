@@ -6,100 +6,126 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/space_background_1"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.SignUPActivity">
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.LogInActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/propic"
+        android:layout_width="150dip"
+        android:layout_height="150dip"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/logo"
-        />
-
-
+        android:layout_marginTop="27dp"
+        android:contentDescription="logo"
+        app:srcCompat="@drawable/propic" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/et_First_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/info"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:background="#1000"
-        android:drawableLeft="@drawable/ic_email"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Email"
+        android:hint="First Name"
         android:textSize="24dip"
-        android:inputType="textEmailAddress" />
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/et_Confirm_Email"
+        android:id="@+id/et_Second_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_email"
+        android:layout_below="@+id/et_First_Name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:background="#1000"
-        android:drawableLeft="@drawable/ic_email"
-        android:ems="10"
-        android:hint="Confirm Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24dip" />
-
-    <EditText
-        android:id="@+id/et_Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_Confirm_Email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:background="#1000"
-        android:drawableLeft="@drawable/ic_action_passwordicon"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Password"
+        android:hint="Second Name"
         android:textSize="24dip"
-        android:inputType="textPassword" />
-
+        android:inputType="textPersonName" />
     <EditText
-        android:id="@+id/et_Confirm_Password"
+        android:id="@+id/et_DoB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_Password"
+        android:layout_below="@+id/et_Second_Name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:background="#1000"
         android:textColor="@android:color/background_light"
-        android:drawableLeft="@drawable/ic_action_passwordicon"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Confirm Password"
+        android:hint="Date Of Birth"
         android:textSize="24dip"
-        android:inputType="textPassword" />
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/et_Height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_DoB"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:background="#1000"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/cardview_light_background"
+        android:hint="Height"
+        android:textSize="24dip"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/et_Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_Height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:background="#1000"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/cardview_light_background"
+        android:hint="Weight"
+        android:textSize="24dip"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/propic"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="#1000"
+        android:ems="10"
+        android:hint="Weight"
+        android:text="TextView"
+
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/cardview_light_background"
+        android:textSize="15dp"
+        tools:text="Click Image to Add Profile Picture" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/SigUp_Card"
         android:layout_width="300dip"
         android:layout_height="50dip"
-        android:layout_alignEnd="@+id/et_Confirm_Password"
+        android:layout_alignEnd="@+id/et_Weight"
         android:textColor="@android:color/background_light"
-        android:layout_below="@+id/et_Confirm_Password"
+        android:layout_below="@+id/et_Weight"
         android:layout_marginTop="25dp"
         android:elevation="10dp"
         app:cardBackgroundColor="@color/colorAccent"
-        android:onClick="SignUp"
+        android:onClick="Final"
         app:cardCornerRadius="25dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="SignUp">
+            android:onClick="Final">
 
             <TextView
                 android:id="@+id/SignUp"
@@ -107,19 +133,15 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:onClick="SignUp"
+                android:onClick="Final"
                 android:text="Sign Up"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24dip" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-    <android.support.v4.widget.ContentLoadingProgressBar
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_height="wrap_content"
-        android:id="@+id/ProgressBar"
-        android:visibility="gone" />
+
+
+
 
 </RelativeLayout>
