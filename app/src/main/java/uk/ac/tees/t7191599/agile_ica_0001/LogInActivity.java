@@ -25,7 +25,7 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
-    public void LoggedIn(final View view) {
+    public void LoggedIn(View view) {
 
         Firebase fb = new Firebase();
         et_username = findViewById(R.id.et_username);

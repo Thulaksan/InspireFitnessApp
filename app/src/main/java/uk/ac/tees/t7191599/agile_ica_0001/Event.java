@@ -1,10 +1,12 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
+import java.io.Serializable;
+
 /**
  * Created by Powerman984 on 27/02/2019.
  */
 
-public class Event {
+public class Event implements Serializable {
     private String Name;
     private String date;
 

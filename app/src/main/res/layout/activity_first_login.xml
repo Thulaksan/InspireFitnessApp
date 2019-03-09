@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/space_background_1"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.LogInActivity">
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.First_loginActivity">
 
     <ImageView
         android:id="@+id/propic"
@@ -102,7 +102,7 @@
         android:background="#1000"
         android:ems="10"
         android:hint="Weight"
-        android:text="TextView"
+        android:text="Click Image to Add Profile Picture"
 
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/cardview_light_background"
@@ -110,7 +110,7 @@
         tools:text="Click Image to Add Profile Picture" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/SigUp_Card"
+        android:id="@+id/Final_Card"
         android:layout_width="300dip"
         android:layout_height="50dip"
         android:layout_alignEnd="@+id/et_Weight"
@@ -119,24 +119,24 @@
         android:layout_marginTop="25dp"
         android:elevation="10dp"
         app:cardBackgroundColor="@color/colorAccent"
-        android:onClick="Final"
-        app:cardCornerRadius="25dp">
+        app:cardCornerRadius="25dp"
+        android:onClick="FinalLogin">
 
         <RelativeLayout
+            android:id="@+id/on"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="Final">
+            android:onClick="FinalLogin">
 
             <TextView
-                android:id="@+id/SignUp"
+                android:id="@+id/FinalSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:onClick="Final"
+                android:layout_centerInParent="true"
                 android:text="Sign Up"
                 android:textColor="@color/cardview_light_background"
-                android:textSize="24dip" />
+                android:textSize="24dip"
+                android:onClick="FinalLogin"/>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

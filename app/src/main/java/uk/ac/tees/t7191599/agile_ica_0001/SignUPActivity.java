@@ -1,6 +1,5 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
@@ -91,10 +90,8 @@ public class SignUPActivity extends AppCompatActivity {
 
         ProgressBar.setVisibility(View.VISIBLE);
         fb.setAct(this);
-        fb.SignUp(TempEmail,TempPass);
-        Intent intent = new Intent(this, First_loginActivity.class);
-        startActivity(intent);
-        }
+        fb.SignUp(TempEmail, TempPass);
+         }
 
 //        User TempUser = new User();
 //

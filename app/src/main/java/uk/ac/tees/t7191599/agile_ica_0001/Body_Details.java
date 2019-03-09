@@ -1,11 +1,13 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
-public class Body_Details {
+import java.io.Serializable;
+
+public class Body_Details implements Serializable {
 
 
-    String Height;
-    String Weight;
-    String DOB;
+    private String Height;
+    private String Weight;
+    private String DOB;
 
     public Body_Details(String height, String weight, String DOB) {
         Height = height;
@@ -35,5 +37,9 @@ public class Body_Details {
 
     public void setDOB(String DOB) {
         this.DOB = DOB;
+    }
+
+    public Body_Details() {
+
     }
 }

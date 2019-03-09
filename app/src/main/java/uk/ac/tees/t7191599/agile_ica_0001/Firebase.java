@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,38 +26,54 @@ public class Firebase implements Serializable {
 
 
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseFirestoreSettings settings;
     private Activity act;
     private User user;
 
+    public Firebase getFb() {
+        return fb;
+    }
+
+    public void setFb(Firebase fb) {
+        this.fb = fb;
+    }
+
+    private Firebase fb;
+
 
     public Firebase() {
-        db = FirebaseFirestore.getInstance();
-
 
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
         db.setFirestoreSettings(settings);
-        mAuth = FirebaseAuth.getInstance();
-        mAuth.signOut();
+
 
     }
 
     public FirebaseAuth getmAuth() {
+        setmAuth(FirebaseAuth.getInstance());
         return mAuth;
+    }
+
+    public void setmAuth(FirebaseAuth mAuth) {
+        this.mAuth = mAuth;
     }
 
     public void SignUp(String Email, String Password) {
 
+        setFb(this);
 
-
-        mAuth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        getmAuth().createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(getAct(), "Registered", Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    Intent intent = new Intent(getAct(), First_loginActivity.class);
+                    intent.putExtra("Auth",user);
+                    getAct().startActivity(intent);
                 }else{
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -75,13 +92,18 @@ public class Firebase implements Serializable {
 
     public void SignIn(String Email, String Password) {
 
-        mAuth.signInWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        getmAuth().signInWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //progressBar.setVisibility(View.GONE);
+
                 if (task.isSuccessful()) {
-                  //  finish();
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    String Email = user.getEmail();
+
+                    User u = getDBUser(Email);
+
                     Intent intent = new Intent(getAct(), EventListActivity.class);
+                    intent.putExtra("User",u);
                     getAct().startActivity(intent);
 
                 } else {
@@ -103,8 +125,9 @@ public class Firebase implements Serializable {
         this.act = act;
     }
 
-    public void DBUser(User Temp){
-        db.collection("Users").document(mAuth.getCurrentUser().getEmail())
+    public static void DBUser(User Temp){
+
+        db.collection("Users").document(Temp.getEmail())
                 .set(Temp, SetOptions.merge())
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -116,15 +139,14 @@ public class Firebase implements Serializable {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getAct() , "SignupError", Toast.LENGTH_SHORT).show();
                         Log.w("Signup", "Error adding document", e);
                         System.out.println("Worked");
                     }
                 });
     }
 
-    public User getDBUser(){
-        DocumentReference docRef = db.collection("Users").document(mAuth.getCurrentUser().getEmail());
+    public User getDBUser(String Email){
+        DocumentReference docRef = db.collection("Users").document(Email);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -134,6 +156,7 @@ public class Firebase implements Serializable {
                         Log.d("", "DocumentSnapshot data: " + document.getData());
                         User u = document.toObject(User.class);
                         setUser(u);
+
                     } else {
                         Log.d("", "No such document");
                     }
