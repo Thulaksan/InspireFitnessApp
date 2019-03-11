@@ -2,10 +2,12 @@ package uk.ac.tees.t7191599.agile_ica_0001;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -19,17 +21,26 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
 
 public class Firebase implements Serializable {
 
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth= FirebaseAuth.getInstance();
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseFirestoreSettings settings;
+    private static StorageReference ImageStorage = FirebaseStorage.getInstance().getReference("ProfileImages");
     private Activity act;
     private User user;
+    private  StorageTask UploadImg;
+    private static String ImageURL;
+
+
 
     public Firebase getFb() {
         return fb;
@@ -53,7 +64,7 @@ public class Firebase implements Serializable {
     }
 
     public FirebaseAuth getmAuth() {
-        setmAuth(FirebaseAuth.getInstance());
+
         return mAuth;
     }
 
@@ -116,6 +127,47 @@ public class Firebase implements Serializable {
 
     }
 
+
+    public static String UploadImage(Uri image) {
+
+
+        ImageStorage.putFile(image).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
+        {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
+            {
+                if (!task.isSuccessful())
+                {
+                    throw task.getException();
+                }
+                return ImageStorage.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>()
+        {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task)
+            {
+                if (task.isSuccessful())
+                {
+                    Uri downloadUri = task.getResult();
+                    setImageURL(downloadUri.toString());
+
+                }
+            }
+        });
+
+
+    return getImageURL();
+    }
+
+
+    public static String getImageURL() {
+        return ImageURL;
+    }
+
+    public static void setImageURL(String imageURL) {
+        ImageURL = imageURL;
+    }
 
     public Activity getAct() {
         return act;

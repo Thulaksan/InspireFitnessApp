@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class User implements Serializable {
      private String First_Name;
      private String Second_Name;
+     private String Image;
     private String Email;
      private Body_Details Current;
     private  ArrayList<Body_Details> BodyHistory = new ArrayList<Body_Details>();
@@ -30,6 +31,14 @@ public class User implements Serializable {
 
     public void setSecond_Name(String second_Name) {
         Second_Name = second_Name;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
     }
 
     public Body_Details getCurrent() {
@@ -68,12 +77,13 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String first_Name, String second_Name,String email, String height, String weight, String DOB) {
+    public User(String first_Name, String second_Name,String email, String height, String weight, String DOB,String image) {
         First_Name = first_Name;
         Second_Name = second_Name;
         Email = email;
         Current = new Body_Details(height,weight,DOB);
         BodyHistory.add(Current);
+        Image = image;
 
     }
 }
