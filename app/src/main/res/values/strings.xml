@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AGILE_ICA_0.001</string>
     <string name="title_activity_log_test">LogTest</string>
+    <string name="asd">step</string>
+    <string name="steps">steps</string>
+    <string name="_0">0</string>
 </resources>
