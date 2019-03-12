@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp"
         android:text="@string/steps"
-        />
+        android:textColor="@color/cardview_light_background" />
 
     <TextView
         android:id="@+id/tv_steps"
@@ -27,6 +27,7 @@
         android:layout_alignStart="@+id/tv_into"
         android:layout_below="@+id/tv_into"
         android:layout_marginTop="72dp"
-        android:textSize="40sp"
-        android:text="@string/_0"/>
+        android:text="@string/_0"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="40sp" />
 </RelativeLayout>
