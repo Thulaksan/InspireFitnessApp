@@ -78,5 +78,4 @@ public class FoodSearchApi extends AsyncTask {
         searchName = name;
     }
 
-
 }

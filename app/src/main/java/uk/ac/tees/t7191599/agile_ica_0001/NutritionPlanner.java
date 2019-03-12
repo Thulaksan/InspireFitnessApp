@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +21,8 @@ public class NutritionPlanner extends AppCompatActivity {
     EditText foodName;
     ListView listView;
     ArrayAdapter adapter;
+    TextView kCalComparison;
+
 
     public static String gettingfood = "";
     public static int gettingKcal = 0;
@@ -27,7 +30,7 @@ public class NutritionPlanner extends AppCompatActivity {
     List<Integer> kCalArray;
 
     private int reccommendedKcal = 2500;
-    private int currentKcal = 0;
+    private int currentKcal;
 
 
 
@@ -37,13 +40,19 @@ public class NutritionPlanner extends AppCompatActivity {
         setContentView(R.layout.activity_nutrition_planner);
 
         foodName = (EditText) findViewById(R.id.foodSearchBar);
+        kCalComparison = findViewById(R.id.calorieComparison);
+        searchButton = findViewById(R.id.searchButton);
+
         displayArr = new ArrayList();
         kCalArray = new ArrayList();
-        displayArr.add("Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
-        searchButton = findViewById(R.id.searchButton);
+
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
         listView.setAdapter(adapter);
+
+
+        currentKcal = totalCalorie();
+        kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + currentKcal);
 
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +67,8 @@ public class NutritionPlanner extends AppCompatActivity {
                 {
                     displayArr.add(gettingfood);
                     kCalArray.add(gettingKcal);
-
-                    //displayArr.add(1, "Reccommended Kcal = " + reccommendedKcal + "Current = " + totalCalorie());
-                    //displayArr.remove(2);
+                    currentKcal = totalCalorie();
+                    kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + currentKcal);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -73,14 +81,19 @@ public class NutritionPlanner extends AppCompatActivity {
                 if (position == position)
                 {
                     displayArr.remove(position);
+                    kCalArray.remove(position);
                     adapter.notifyDataSetChanged();
-
+                    currentKcal = totalCalorie();
+                    kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + currentKcal);
                 }
             }
         });
     }
 
-    public int totalCalorie()
+
+
+
+    private int totalCalorie()
     {
         int numb = 0;
 
