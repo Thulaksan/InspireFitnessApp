@@ -32,14 +32,12 @@ public class StepInterface extends AppCompatActivity implements SensorEventListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.stepinterface);
 
         tv_steps = (TextView)findViewById(R.id.tv_steps);
 
-        sensorManager = (SensorManager) getSystemService(MainActivity.SENSOR_SERVICE);
-
+        sensorManager = (SensorManager) getSystemService(StepInterface.SENSOR_SERVICE);
     }
-
 
     @Override
     public void onResume( ) {
