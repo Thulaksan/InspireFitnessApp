@@ -23,7 +23,6 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.Serializable;
@@ -34,10 +33,12 @@ public class Firebase implements Serializable {
     private FirebaseAuth mAuth= FirebaseAuth.getInstance();
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseFirestoreSettings settings;
-    private static StorageReference ImageStorage = FirebaseStorage.getInstance().getReference("ProfileImages");
+    static Long x = System.currentTimeMillis();
+    static FirebaseStorage storage = FirebaseStorage.getInstance();
+    private static StorageReference ImageStorage = storage.getReference(x.toString());
+    private Firebase fb;
     private Activity act;
     private User user;
-    private  StorageTask UploadImg;
     private static String ImageURL;
 
 
@@ -50,7 +51,7 @@ public class Firebase implements Serializable {
         this.fb = fb;
     }
 
-    private Firebase fb;
+
 
 
     public Firebase() {
@@ -127,7 +128,6 @@ public class Firebase implements Serializable {
 
     }
 
-
     public static String UploadImage(Uri image) {
 
 
@@ -150,6 +150,12 @@ public class Firebase implements Serializable {
                 if (task.isSuccessful())
                 {
                     Uri downloadUri = task.getResult();
+
+                    while((downloadUri.toString()==null)){
+                    downloadUri = task.getResult();
+                }
+
+
                     setImageURL(downloadUri.toString());
 
                 }
@@ -159,7 +165,6 @@ public class Firebase implements Serializable {
 
     return getImageURL();
     }
-
 
     public static String getImageURL() {
         return ImageURL;

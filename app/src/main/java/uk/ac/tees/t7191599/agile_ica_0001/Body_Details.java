@@ -7,12 +7,12 @@ public class Body_Details implements Serializable {
 
     private String Height;
     private String Weight;
-    private String DOB;
+    private Long DOB;
 
-    public Body_Details(String height, String weight, String DOB) {
+    public Body_Details(String height, String weight, Long DOB) {
         Height = height;
         Weight = weight;
-        this.DOB = DOB;
+        this.DOB =  DOB;
     }
 
     public String getHeight() {
@@ -31,11 +31,12 @@ public class Body_Details implements Serializable {
         Weight = weight;
     }
 
-    public String getDOB() {
-        return DOB;
+    public Long getDOB() {
+
+        return this.DOB;
     }
 
-    public void setDOB(String DOB) {
+    public void setDOB(Long DOB) {
         this.DOB = DOB;
     }
 

@@ -77,7 +77,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String first_Name, String second_Name,String email, String height, String weight, String DOB,String image) {
+    public User(String first_Name, String second_Name, String email, String height, String weight, Long DOB, String image) {
         First_Name = first_Name;
         Second_Name = second_Name;
         Email = email;
