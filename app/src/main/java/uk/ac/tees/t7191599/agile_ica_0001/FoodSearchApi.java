@@ -22,6 +22,7 @@ public class FoodSearchApi extends AsyncTask {
     StringBuilder stringBuilder = new StringBuilder();
     String searchName = "";
     String sendingData = "";
+    int sendingKcal;
 
 
     @Override
@@ -48,6 +49,9 @@ public class FoodSearchApi extends AsyncTask {
                     sendingData = "food name: " + jO.get("name") + "\n" +
                             "nutritional rating: " + jO.get("nutritional rating") + "\n" +
                             "calories: " + jO.get("calories");
+
+                    sendingKcal = Integer.parseInt("" + jO.get("calories"));
+                    break;
                 }
             }
 
@@ -65,18 +69,13 @@ public class FoodSearchApi extends AsyncTask {
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
 
-        if (!sendingData.equals(""))
-        {
-            NutritionPlanner.displayArr.add(sendingData);
-        }
-
-
+            NutritionPlanner.gettingfood = sendingData;
+            NutritionPlanner.gettingKcal = sendingKcal;
     }
 
     public void setFoodName(String name)
     {
         searchName = name;
     }
-
 
 }
