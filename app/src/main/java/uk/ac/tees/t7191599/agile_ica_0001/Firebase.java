@@ -57,7 +57,6 @@ public class Firebase implements Serializable {
     public Firebase() {
 
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setTimestampsInSnapshotsEnabled(true)
                 .build();
         db.setFirestoreSettings(settings);
 
