@@ -17,17 +17,45 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp"
+        android:fontFamily="casual"
         android:text="@string/steps"
-        android:textColor="@color/cardview_light_background" />
-
-    <TextView
-        android:id="@+id/tv_steps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tv_into"
-        android:layout_below="@+id/tv_into"
-        android:layout_marginTop="72dp"
-        android:text="@string/_0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/cardview_light_background"
-        android:textSize="40sp" />
+        tools:text="Step Tracker" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="50dip"
+        android:layout_height="80dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:background="@drawable/walking"
+        android:src="@drawable/walking" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="40dip">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_steps"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/_0"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 </RelativeLayout>
