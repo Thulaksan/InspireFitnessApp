@@ -33,6 +33,7 @@
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".NutritionPlanner"/>
         <activity android:name=".StepInterface"/>
+        <activity android:name=".First_loginActivity"/>
         <activity android:name=".UserProfile">
         </activity>
     </application>
