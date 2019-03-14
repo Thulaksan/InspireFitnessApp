@@ -17,44 +17,13 @@
         app:srcCompat="@drawable/logo"
         />
 
-    <EditText
-        android:id="@+id/et_firstname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/et_lastname"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="18dp"
-        android:background="#1000"
-        android:drawableLeft="@drawable/ic_action_name"
-        android:ems="10"
-        android:hint="firstname"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24dip" />
 
-    <EditText
-        android:id="@+id/et_lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_firstname"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:ems="10"
-        android:background="#1000"
-        android:drawableLeft="@drawable/ic_action_name"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@color/cardview_light_background"
-        android:hint="Lastname"
-        android:textSize="24dip"
-        android:inputType="textPersonName"
-        />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_lastname"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -67,26 +36,26 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/et_Conform_Email"
+        android:id="@+id/et_Confirm_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:ems="10"
         android:background="#1000"
         android:drawableLeft="@drawable/ic_email"
+        android:ems="10"
+        android:hint="Confirm Email"
+        android:inputType="textEmailAddress"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Conform Email"
-        android:textSize="24dip"
-        android:inputType="textEmailAddress" />
+        android:textSize="24dip" />
 
     <EditText
         android:id="@+id/et_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_Conform_Email"
+        android:layout_below="@+id/et_Confirm_Email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -99,7 +68,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/et_Conform_Password"
+        android:id="@+id/et_Confirm_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_Password"
@@ -110,7 +79,7 @@
         android:textColor="@android:color/background_light"
         android:drawableLeft="@drawable/ic_action_passwordicon"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Conform Password"
+        android:hint="Confirm Password"
         android:textSize="24dip"
         android:inputType="textPassword" />
 
@@ -118,17 +87,19 @@
         android:id="@+id/SigUp_Card"
         android:layout_width="300dip"
         android:layout_height="50dip"
-        android:layout_alignEnd="@+id/et_Conform_Password"
+        android:layout_alignEnd="@+id/et_Confirm_Password"
         android:textColor="@android:color/background_light"
-        android:layout_below="@+id/et_Conform_Password"
+        android:layout_below="@+id/et_Confirm_Password"
         android:layout_marginTop="25dp"
         android:elevation="10dp"
         app:cardBackgroundColor="@color/colorAccent"
+        android:onClick="SignUp"
         app:cardCornerRadius="25dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="SignUp">
 
             <TextView
                 android:id="@+id/SignUp"
@@ -136,12 +107,19 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:textColor="@color/cardview_light_background"
-                android:textSize="24dip"
                 android:onClick="SignUp"
-                android:text="Sign Up" />
+                android:text="Sign Up"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="24dip" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProgressBar"
+        android:visibility="gone" />
 
 </RelativeLayout>
