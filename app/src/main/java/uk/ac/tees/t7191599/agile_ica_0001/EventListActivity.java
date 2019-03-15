@@ -45,4 +45,9 @@ public class EventListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CreateEventActivity.class);
         startActivity(intent);
     }
+    public void viewProfile(View view)
+    {
+        Intent intent = new Intent(this, UserProfile.class);
+        startActivity(intent);
+    }
 }
