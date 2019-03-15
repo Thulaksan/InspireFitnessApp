@@ -20,14 +20,14 @@ public class NutritionPlanner extends AppCompatActivity {
     Button searchButton;
     EditText foodName;
     ListView listView;
-    ArrayAdapter adapter;
+    public static ArrayAdapter adapter;
     TextView kCalComparison;
 
 
-    public static String gettingfood = "";
-    public static int gettingKcal = 0;
-    ArrayList displayArr;
-    List<Integer> kCalArray;
+
+
+    public static ArrayList displayArr;
+    public static List<Integer> kCalArray;
 
     private int reccommendedKcal = 2500;
     private int currentKcal;
@@ -43,8 +43,8 @@ public class NutritionPlanner extends AppCompatActivity {
         kCalComparison = findViewById(R.id.calorieComparison);
         searchButton = findViewById(R.id.searchButton);
 
-        displayArr = new ArrayList();
-        kCalArray = new ArrayList();
+         displayArr = new ArrayList();
+         kCalArray = new ArrayList();
 
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
@@ -63,15 +63,11 @@ public class NutritionPlanner extends AppCompatActivity {
                 foodSearchApi.setFoodName(foodName.getText().toString());
                 foodSearchApi.execute();
 
-                if (!gettingfood.equals(""))
-                {
-                    displayArr.add(gettingfood);
-                    kCalArray.add(gettingKcal);
+
                     currentKcal = totalCalorie();
                     kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + currentKcal);
-                }
 
-                adapter.notifyDataSetChanged();
+
             }
         });
 
@@ -93,7 +89,7 @@ public class NutritionPlanner extends AppCompatActivity {
 
 
 
-    private int totalCalorie()
+    public int totalCalorie()
     {
         int numb = 0;
 
