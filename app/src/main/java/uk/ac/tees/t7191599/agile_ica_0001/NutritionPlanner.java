@@ -21,7 +21,7 @@ public class NutritionPlanner extends AppCompatActivity {
     EditText foodName;
     ListView listView;
     public static ArrayAdapter adapter;
-    TextView kCalComparison;
+    public static TextView kCalComparison;
 
 
 
@@ -60,12 +60,10 @@ public class NutritionPlanner extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FoodSearchApi foodSearchApi = new FoodSearchApi();
+                currentKcal = totalCalorie();
                 foodSearchApi.setFoodName(foodName.getText().toString());
+                foodSearchApi.setCals(currentKcal, reccommendedKcal);
                 foodSearchApi.execute();
-
-
-                    currentKcal = totalCalorie();
-                    kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + currentKcal);
 
 
             }
