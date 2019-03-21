@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uk.ac.tees.t7191599.agile_ica_0001">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Gymactivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,11 +31,10 @@
         </activity>
         <activity android:name=".EventListActivity" />
         <activity android:name=".CreateEventActivity" />
-        <activity android:name=".NutritionPlanner"/>
-        <activity android:name=".StepInterface"/>
-        <activity android:name=".First_loginActivity"/>
-        <activity android:name=".UserProfile">
-        </activity>
+        <activity android:name=".NutritionPlanner" />
+        <activity android:name=".StepInterface" />
+        <activity android:name=".First_loginActivity" />
+        <activity android:name=".UserProfile"></activity>
     </application>
 
 </manifest>
