@@ -95,10 +95,4 @@ public class FoodSearchApi extends AsyncTask {
         reccommendedKcal = reccomend;
     }
 
-
-
-
-
-
-
 }
