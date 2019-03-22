@@ -6,16 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText et_username;
     private EditText et_password;
+    private ProgressBar Pb;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        Pb = findViewById(R.id.Pb);
+        Pb.setVisibility(View.INVISIBLE);
     }
     public void SignUP(View view) {
         Intent intent = new Intent(this, SignUPActivity.class);
@@ -50,6 +54,7 @@ public class LogInActivity extends AppCompatActivity {
                 return;
             }
         fb.setAct(this);
+            Pb.setVisibility(View.VISIBLE);
         fb.SignIn(Email,Password);
 
 
