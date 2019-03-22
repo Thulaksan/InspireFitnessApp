@@ -113,12 +113,8 @@ public class Firebase implements Serializable {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String Email = user.getEmail();
                     // gets Firebase document which matches firebase Auth Email address
-                    User u = getDBUser(Email);
-                    Intent intent = new Intent(getAct(), EventListActivity.class);
-                    // adds user to intent , this allows user to be passed from one activity to the next
-                    intent.putExtra("User",u);
-                    //starts next activity
-                    getAct().startActivity(intent);
+                    getDBUser(Email);
+
 
                 } else {
                     Toast.makeText(getAct(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -208,15 +204,32 @@ public class Firebase implements Serializable {
                 });
     }
 
-    public User getDBUser(String Email){
+    public void getDBUser(String Email){
         DocumentReference docRef = db.collection("Users").document(Email);
         Task<DocumentSnapshot> task = docRef.get();
-    while (task.isSuccessful() !=true){
-    }
-        User u = task.getResult().toObject(User.class);
-        System.out.println(u.getFirst_Name());
 
-  return u;
+        task.addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    user = task.getResult().toObject(User.class);
+
+                    //Log.d("Test", user.);
+                    Intent intent = new Intent(getAct(), EventListActivity.class);
+                    // adds user to intent , this allows user to be passed from one activity to the next
+                    intent.putExtra("User",user);
+                    //starts next activity
+                    getAct().startActivity(intent);
+                }
+            }
+        });
+//    while (task.isSuccessful() !=true){
+//    }
+//        User u = task.getResult().toObject(User.class);
+//        System.out.println(u.getFirst_Name());
+//
+//  return u;
     }
 
     public User getUser() {

@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/propic"
         android:layout_width="150dip"
-        android:layout_height="150dip"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
