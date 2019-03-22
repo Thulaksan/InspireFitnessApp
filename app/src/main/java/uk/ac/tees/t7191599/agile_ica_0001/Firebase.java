@@ -55,7 +55,7 @@ public class Firebase implements Serializable {
 
 
     public Firebase() {
-
+        //initializes Firebase Settings
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .build();
         db.setFirestoreSettings(settings);
@@ -67,7 +67,6 @@ public class Firebase implements Serializable {
 
         return mAuth;
     }
-
     public void setmAuth(FirebaseAuth mAuth) {
         this.mAuth = mAuth;
     }
@@ -75,12 +74,13 @@ public class Firebase implements Serializable {
     public void SignUp(String Email, String Password) {
 
         setFb(this);
-
+        // Creates Firebase Authentications User with given username and pass
         getmAuth().createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(getAct(), "Registered", Toast.LENGTH_SHORT).show();
+                    // Assigns created user to the FirebaseUser Variable
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     Intent intent = new Intent(getAct(), First_loginActivity.class);
                     intent.putExtra("Auth",user);
@@ -103,19 +103,18 @@ public class Firebase implements Serializable {
 
     public void SignIn(String Email, String Password) {
 
+        //Gets Firebase Authentication user with provided email and password,
         getmAuth().signInWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()) {
+                    // Assigns created user to the FirebaseUser Variable
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String Email = user.getEmail();
+                    // gets Firebase document which matches firebase Auth Email address
+                    getDBUser(Email);
 
-                    User u = getDBUser(Email);
-
-                    Intent intent = new Intent(getAct(), EventListActivity.class);
-                    intent.putExtra("User",u);
-                    getAct().startActivity(intent);
 
                 } else {
                     Toast.makeText(getAct(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -129,16 +128,18 @@ public class Firebase implements Serializable {
 
     public static String UploadImage(Uri image) {
 
-
+        // attempts to place a image in the root directly of firebase storage,
         ImageStorage.putFile(image).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
         {
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
             {
+                //error management
                 if (!task.isSuccessful())
                 {
                     throw task.getException();
                 }
+
                 return ImageStorage.getDownloadUrl();
             }
         }).addOnCompleteListener(new OnCompleteListener<Uri>()
@@ -148,20 +149,22 @@ public class Firebase implements Serializable {
             {
                 if (task.isSuccessful())
                 {
+                    //gets URl for saved imaged
                     Uri downloadUri = task.getResult();
 
+                    //waits for the Async task to finish
                     while((downloadUri.toString()==null)){
                     downloadUri = task.getResult();
                 }
 
-
+                    // Assigns URl to var to get around inner class issues
                     setImageURL(downloadUri.toString());
 
                 }
             }
         });
 
-
+        // gets and returns to get around inner class issues
     return getImageURL();
     }
 
@@ -201,27 +204,32 @@ public class Firebase implements Serializable {
                 });
     }
 
-    public User getDBUser(String Email){
+    public void getDBUser(String Email){
         DocumentReference docRef = db.collection("Users").document(Email);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        Task<DocumentSnapshot> task = docRef.get();
+
+        task.addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d("", "DocumentSnapshot data: " + document.getData());
-                        User u = document.toObject(User.class);
-                        setUser(u);
+                if(task.isSuccessful()) {
+                    user = task.getResult().toObject(User.class);
 
-                    } else {
-                        Log.d("", "No such document");
-                    }
-                } else {
-                    Log.d("", "get failed with ", task.getException());
+                    //Log.d("Test", user.);
+                    Intent intent = new Intent(getAct(), EventListActivity.class);
+                    // adds user to intent , this allows user to be passed from one activity to the next
+                    intent.putExtra("User",user);
+                    //starts next activity
+                    getAct().startActivity(intent);
                 }
             }
         });
-            return getUser();
+//    while (task.isSuccessful() !=true){
+//    }
+//        User u = task.getResult().toObject(User.class);
+//        System.out.println(u.getFirst_Name());
+//
+//  return u;
     }
 
     public User getUser() {
