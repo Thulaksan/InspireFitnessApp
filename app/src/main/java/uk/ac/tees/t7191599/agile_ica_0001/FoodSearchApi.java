@@ -23,6 +23,8 @@ public class FoodSearchApi extends AsyncTask {
     String searchName = "";
     String sendingData = "";
     int sendingKcal;
+    int totalCal;
+    int reccommendedKcal;
 
 
     @Override
@@ -69,13 +71,28 @@ public class FoodSearchApi extends AsyncTask {
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
 
-            NutritionPlanner.gettingfood = sendingData;
-            NutritionPlanner.gettingKcal = sendingKcal;
+
+        if (!sendingData.equals(""))
+        {
+            NutritionPlanner.displayArr.add(sendingData);
+            NutritionPlanner.kCalArray.add(sendingKcal);
+            totalCal = totalCal + sendingKcal;
+            NutritionPlanner.kCalComparison.setText("Reccommended calorie: " + reccommendedKcal + " Current: " + totalCal);
+            NutritionPlanner.adapter.notifyDataSetChanged();
+        }
+
+
     }
 
     public void setFoodName(String name)
     {
         searchName = name;
+    }
+
+    public void setCals(int cal, int reccomend)
+    {
+        totalCal = cal;
+        reccommendedKcal = reccomend;
     }
 
 }
