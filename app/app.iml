@@ -111,6 +111,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
@@ -147,6 +148,7 @@
     <orderEntry type="library" name="com.google.firebase:firebase-storage-16.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-measurement-16.4.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:C.\Users\Powerman984\Documents\Uni_Work\Year_2\Agile\agile_dev\app\libs\YouTubeAndroidPlayerApi.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="io.grpc:grpc-okhttp:1.16.1@jar" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-measurement-sdk-16.4.0" level="project" />
     <orderEntry type="library" name="com.android.support:transition-26.1.0" level="project" />

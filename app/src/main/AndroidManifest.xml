@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Gymactivity"></activity>
+        <activity android:name=".Gymactivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,9 @@
         <activity android:name=".NutritionPlanner" />
         <activity android:name=".StepInterface" />
         <activity android:name=".First_loginActivity" />
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".UserProfile" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".toutoralPage"></activity>
     </application>
 
 </manifest>
