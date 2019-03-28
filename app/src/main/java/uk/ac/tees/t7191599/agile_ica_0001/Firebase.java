@@ -192,14 +192,7 @@ public class Firebase implements Serializable {
                     @Override
                     public void onSuccess(Void aVoid) {
 
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Signup", "Error adding document", e);
-                        System.out.println("Worked");
+                        System.out.println("Updated");
                     }
                 });
     }

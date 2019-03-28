@@ -23,9 +23,7 @@ public class Gymactivity extends AppCompatActivity {
     Spinner GymEvents;
     Spinner Rep ;
     TextView tv_Date;
-    int TempDay;
-    int TempMonth;
-    int TempYear;
+    Calendar c;
     private DatePickerDialog.OnDateSetListener dateListener;
     private ArrayList< WorkOut > EventList = new ArrayList< WorkOut >();
 
@@ -75,10 +73,10 @@ public class Gymactivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
 
-                TempDay = day;
-                TempMonth =month;
-                TempYear= year;
+
                 String date = month + "/" + day + "/" + year;
+                 c = Calendar.getInstance();
+                       c.set(year,month,day);
                 tv_Date.setText(date);
             }
         };
@@ -175,8 +173,10 @@ public class Gymactivity extends AppCompatActivity {
     }
 
     public void AddEvent(View view){
-        String Date = tv_Date.getText().toString();
+        Long Date =c.getTimeInMillis();
         u.getEvents().add(new GymEvent(Date,EventList));
+        Firebase f = new Firebase();
+        f.DBUser(u);
         Intent intent = new Intent(this, EventListActivity.class);
         intent.putExtra("User",u);
         startActivity(intent);

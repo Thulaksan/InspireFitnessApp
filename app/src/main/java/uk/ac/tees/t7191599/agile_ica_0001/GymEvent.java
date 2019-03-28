@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class GymEvent extends Event implements Serializable {
 
-    ArrayList<WorkOut> WorkOuts = new ArrayList<WorkOut>();
+    private ArrayList<WorkOut> WorkOuts = new ArrayList<WorkOut>();
 
-    public GymEvent(String date, ArrayList<WorkOut> workOuts) {
+    public GymEvent(Long date, ArrayList<WorkOut> workOuts) {
         super("Gym Workout", date);
         WorkOuts = workOuts;
     }

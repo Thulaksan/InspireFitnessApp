@@ -42,7 +42,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/hight"
+        android:id="@+id/et_Sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -56,11 +56,11 @@
         android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
 
     <EditText
-        android:id="@+id/weight"
+        android:id="@+id/et_Water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/hight"
+        android:layout_below="@+id/et_Sleep"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -71,6 +71,7 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
+        android:onClick="Finish"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
@@ -88,6 +89,7 @@
 
             <TextView
                 android:id="@+id/textView3"
+                android:onClick="Finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -100,11 +102,12 @@
     <android.support.v7.widget.CardView
         android:layout_width="60dp"
         android:layout_height="55dp"
-        android:layout_alignTop="@+id/hight"
+        android:layout_alignTop="@+id/et_Sleep"
         android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/hight"
+        android:layout_toEndOf="@+id/et_Sleep"
         app:cardBackgroundColor="@color/colorAccent"
         android:id="@+id/updateSleep"
+        android:onClick="Sleep"
         app:cardCornerRadius="24dp">
 
         <RelativeLayout
@@ -117,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:onClick="Sleep"
                 android:text="Update" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -126,8 +130,9 @@
         android:layout_width="60dp"
         android:layout_height="55dp"
         android:layout_alignStart="@+id/updateSleep"
-        android:layout_alignTop="@+id/weight"
+        android:layout_alignTop="@+id/et_Water"
         app:cardBackgroundColor="@color/colorAccent"
+        android:onClick="Water"
         app:cardCornerRadius="24dp" >
 
         <RelativeLayout
@@ -140,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:onClick="Water"
                 android:text="Update" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
