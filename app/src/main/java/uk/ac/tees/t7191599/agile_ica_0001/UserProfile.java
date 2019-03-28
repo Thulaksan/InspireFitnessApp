@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class UserProfile extends AppCompatActivity {
-    TextView tv_Name,tv_Email,tv_DoB,tv_height,tv_Weight;
+    TextView tv_Name,tv_Email,tv_DoB,tv_height,tv_Weight,tv_BMI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,15 @@ public class UserProfile extends AppCompatActivity {
         tv_DoB = findViewById(R.id.tv_DoB);
         tv_height = findViewById(R.id.tv_Height);
         tv_Weight = findViewById(R.id.tv_Weight);
+        tv_BMI = findViewById(R.id.tv_BMI);
 
         tv_Name.setText(u.getFirst_Name()+" "+u.getSecond_Name());
         tv_Email.setText(u.getEmail());
-        tv_height.setText(u.getCurrent().getHeight());
-        tv_Weight.setText(u.getCurrent().getWeight());
-        Long date = u.getCurrent().getDOB();
+        tv_height.setText(u.getCurrent().getHeight().toString());
+        tv_Weight.setText(u.getCurrent().getWeight().toString());
+        tv_BMI.setText(u.getCurrent().getBMI().toString());
+
+        Long date = u.getDoB();
         Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(date);
 

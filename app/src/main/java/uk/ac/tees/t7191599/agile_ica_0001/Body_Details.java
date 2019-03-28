@@ -5,41 +5,50 @@ import java.io.Serializable;
 public class Body_Details implements Serializable {
 
 
-    private String Height;
-    private String Weight;
-    private Long DOB;
+    private Double Height;
+    private Double Weight;
+    private Long Date;
+    private Double BMI;
+    private String BMIStat;
 
-    public Body_Details(String height, String weight, Long DOB) {
-        Height = height;
-        Weight = weight;
-        this.DOB =  DOB;
+    public Body_Details(Double height, Double weight, Long Date) {
+        this.Height = height; //M
+        this.Weight = weight; //Kg
+        this.Date =  Date;
+        this.BMI = Weight/(Height* Height);
+
+        if(BMI>30){
+            this.BMIStat ="obese";
+        }else if(BMI<29.99 && BMI>25){
+            this.BMIStat ="overweight";
+        } else if(BMI<24.99 && BMI>18.5){
+            this.BMIStat ="healthy";
+        }else if(BMI<18.5 ){
+            this.BMIStat ="underweight";
+        }
+
     }
-
-    public String getHeight() {
+    public Double getHeight() {
         return Height;
     }
-
-    public void setHeight(String height) {
+    public void setHeight(Double height) {
         Height = height;
     }
-
-    public String getWeight() {
+    public Double getWeight() {
         return Weight;
     }
-
-    public void setWeight(String weight) {
+    public void setWeight(Double weight) {
         Weight = weight;
     }
-
-    public Long getDOB() {
-
-        return this.DOB;
+    public void setDate(Long date) {
+        Date = date;
     }
-
-    public void setDOB(Long DOB) {
-        this.DOB = DOB;
+    public Double getBMI() {
+        return BMI;
     }
-
+    public void setBMI(Double BMI) {
+        this.BMI = BMI;
+    }
     public Body_Details() {
 
     }

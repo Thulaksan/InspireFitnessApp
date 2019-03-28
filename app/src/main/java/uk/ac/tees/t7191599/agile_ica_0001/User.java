@@ -12,9 +12,33 @@ public class User implements Serializable {
      private String Second_Name;
      private String Image;
     private String Email;
+    private Long DoB;
      private Body_Details Current;
     private  ArrayList<Body_Details> BodyHistory = new ArrayList<Body_Details>();
     private ArrayList<Event> Events = new ArrayList<Event>();
+    private ArrayList< WorkOut > CommonWorkOut = new ArrayList< WorkOut >();
+
+    public ArrayList< WorkOut >  getCommonWorkOut() {
+        return CommonWorkOut;
+    }
+
+    public void setCommonWorkOut(ArrayList< WorkOut >  commonWorkOut) {
+        CommonWorkOut = commonWorkOut;
+    }
+
+
+
+
+
+
+
+    public Long getDoB() {
+        return DoB;
+    }
+
+    public void setDoB(Long doB) {
+        DoB = doB;
+    }
 
 
     public String getFirst_Name() {
@@ -73,17 +97,21 @@ public class User implements Serializable {
         Email = email;
     }
 
+
+
+
     // Blank Constructor Required For Firebase
     public User() {
     }
 
-    public User(String first_Name, String second_Name, String email, String height, String weight, Long DOB, String image) {
-        First_Name = first_Name;
-        Second_Name = second_Name;
-        Email = email;
-        Current = new Body_Details(height,weight,DOB);
-        BodyHistory.add(Current);
-        Image = image;
+    public User(String first_Name, String second_Name, String email, Double height, Double weight, Long DOB, String image,Long Date) {
+        this.First_Name = first_Name;
+        this.Second_Name = second_Name;
+        this. Email = email;
+        this. Current = new Body_Details(height,weight,Date);
+        this.BodyHistory.add(Current);
+        this.Image = image;
+        this.DoB= DOB;
 
     }
 }

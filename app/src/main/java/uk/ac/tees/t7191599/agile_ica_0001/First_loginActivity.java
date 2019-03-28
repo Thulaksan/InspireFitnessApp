@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class First_loginActivity extends AppCompatActivity {
@@ -33,6 +34,7 @@ public class First_loginActivity extends AppCompatActivity {
     int TempDay;
     int TempMonth;
     int TempYear;
+    Calendar cal;
     private DatePickerDialog.OnDateSetListener dateListener;
 
 
@@ -71,13 +73,14 @@ public class First_loginActivity extends AppCompatActivity {
         dateListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
+                Calendar userdate  = Calendar.getInstance();
+                userdate.set(year,month+1,day);
+                String pattern = "dd-MM-yyyy";
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+                String date = simpleDateFormat.format(userdate.getTime());
 
-                TempDay = day;
-                TempMonth =month;
-                TempYear= year;
-                String date = month + "/" + day + "/" + year;
                 et_DoB.setText(date);
+                cal = userdate;
             }
         };
     }
@@ -127,13 +130,13 @@ public class First_loginActivity extends AppCompatActivity {
 
         String FirstName = et_First_Name.getText().toString().trim();
         String SecondName = et_Second_Name.getText().toString().trim();
-        Calendar  Temp  = Calendar.getInstance();
-        Temp.set(TempDay,TempMonth,TempYear);
-        Calendar DoB = Temp;
+        Calendar UpdateDate = Calendar.getInstance();
+        Calendar DoB = cal;
         String Email = user.getEmail();
         ImageName = Firebase.UploadImage(ImageUri);
-        String Height = et_Height.getText().toString().trim();
-        String Weight = et_Weight.getText().toString().trim();
+        String H = et_Height.getText().toString().trim();
+        String W = et_Weight.getText().toString().trim();
+
 
         if (FirstName ==null) {
             et_First_Name.setError("This Cant be Empty");
@@ -145,12 +148,12 @@ public class First_loginActivity extends AppCompatActivity {
             et_Second_Name.requestFocus();
             return;
         }
-        if (Height ==null) {
+        if (H ==null) {
             et_Height.setError("This Cant be Empty");
             et_Height.requestFocus();
             return;
         }
-        if (Weight ==null) {
+        if (W ==null) {
             et_Weight.setError("This Cant be Empty");
             et_Weight.requestFocus();
             return;
@@ -160,9 +163,10 @@ public class First_loginActivity extends AppCompatActivity {
             et_DoB.requestFocus();
             return;
         }
+        Double Height =Double.parseDouble(H);
+        Double Weight =Double.parseDouble(W);
 
-
-        User TempUser = new User(FirstName,SecondName,Email,Height,Weight,DoB.getTimeInMillis() / 1000,ImageName);
+        User TempUser = new User(FirstName,SecondName,Email,Height,Weight,DoB.getTimeInMillis(),ImageName,UpdateDate.getTimeInMillis());
 
         Firebase.DBUser(TempUser);
         Intent intent = new Intent(First_loginActivity.this, EventListActivity.class);

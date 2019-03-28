@@ -43,11 +43,12 @@
 
     <TextView
         android:id="@+id/tv_Height"
-        android:layout_width="200dp"
+        android:layout_width="70dp"
         android:layout_height="32dp"
         android:layout_below="@+id/tv_DoB"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginTop="18dp"
+        android:layout_toStartOf="@+id/tv_Weight"
         android:fontFamily="casual"
         android:hint="Hight"
         android:textAlignment="center"
@@ -85,13 +86,30 @@
 
     <TextView
         android:id="@+id/tv_Weight"
-        android:layout_width="200dp"
+        android:layout_width="70dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/tv_Height"
+
+        android:layout_alignBaseline="@+id/tv_Height"
+        android:layout_alignBottom="@+id/tv_Height"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
         android:fontFamily="casual"
         android:hint="Weight"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textColorHint="@color/cardview_light_background"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_BMI"
+        android:layout_width="70dp"
+
+        android:layout_height="32dp"
+
+        android:layout_alignBaseline="@+id/tv_Weight"
+        android:layout_alignBottom="@+id/tv_Weight"
+        android:layout_toEndOf="@+id/textView2"
+        android:fontFamily="casual"
+        android:hint="BMI"
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
         android:textColorHint="@color/cardview_light_background"
@@ -101,9 +119,9 @@
         android:id="@+id/etProfileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_Weight"
+
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
         android:background="@drawable/common_google_signin_btn_text_dark_normal_background"
         android:text="Edit Profile" />
 </RelativeLayout>
