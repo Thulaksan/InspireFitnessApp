@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.toutoralPage">
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.toutoralPage"
+    android:background="@drawable/space_background_1">
 
     <view
         class="com.google.android.youtube.player.YouTubePlayerView"
@@ -18,9 +19,33 @@
 
     <Button
         android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/YoutubePlay"
         android:layout_centerHorizontal="true"
-        android:text="play" />
+        android:background="@mipmap/play" />
+
+    <TextView
+        android:id="@+id/disc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Click The PLAY button to start watching our uniuqe playlist of Toutoral Videos on some basic workouts.
+Scroll through all the videos to help improve your workout routien"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:text="All Videos come from 3rd party creators simply click on their chanal to chek the orignal video creations"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="12sp" />
 </RelativeLayout>

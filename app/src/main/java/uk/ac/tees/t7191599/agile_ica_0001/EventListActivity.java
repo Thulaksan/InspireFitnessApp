@@ -55,4 +55,8 @@ public class EventListActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void viewVideos(View view){
+        Intent intent = new Intent(this,toutoralPage.class);
+        startActivity(intent);
+    }
 }

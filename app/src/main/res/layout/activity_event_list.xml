@@ -45,6 +45,16 @@
             android:scrollbars="horizontal|vertical">
 
         </ListView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/imageView9"
+            android:layout_alignStart="@+id/imageView9"
+            android:layout_marginBottom="95dp"
+            android:onClick="viewVideos"
+            app:srcCompat="@mipmap/teacher" />
     </RelativeLayout>
 
 </GridLayout>

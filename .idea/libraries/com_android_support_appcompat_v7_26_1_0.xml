@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.android.support:appcompat-v7-26.1.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2c1f94a837994560bf62ee7e6328f6e2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2c1f94a837994560bf62ee7e6328f6e2/res" />
+      <root url="file:///home/scm-studs/t7191599/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/bc3f9a1cdeb0d17deaf14c08e4d0a63a/res" />
+      <root url="jar:///home/scm-studs/t7191599/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/bc3f9a1cdeb0d17deaf14c08e4d0a63a/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
