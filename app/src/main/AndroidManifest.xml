@@ -36,7 +36,8 @@
         <activity android:name=".First_loginActivity" />
         <activity android:name=".UserProfile" />
         <activity android:name=".EditProfile" />
-        <activity android:name=".toutoralPage"></activity>
+        <activity android:name=".toutoralPage" />
+        <activity android:name=".HealthTracker"></activity>
     </application>
 
 </manifest>
