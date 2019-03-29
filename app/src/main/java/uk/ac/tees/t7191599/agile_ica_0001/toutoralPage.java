@@ -37,7 +37,7 @@ public class toutoralPage extends YouTubeBaseActivity {
                 videoList.add("_zJwhpU7sq0");
 
 
-                youTubePlayer.loadVideos(videoList);
+                youTubePlayer.loadPlaylist("PLDeBiVMIvRNJSeCL_Qxx6O_9H19ZyIGyq");
 
             }
 
