@@ -23,7 +23,7 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         User u = (User) getIntent().getSerializableExtra("User");
-        tv_name = findViewById(R.id.tv_name);
+        tv_name = findViewById(R.id.tv_BMI);
         et_height = findViewById(R.id.et_height);
         et_weight = findViewById(R.id.et_weight);
         tv_name.setText(u.getFirst_Name()+" "+u.getSecond_Name());

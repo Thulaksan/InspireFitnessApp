@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.EditProfile"
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.BMICalcActivity"
     android:background="@drawable/faded"
     >
 
@@ -35,11 +35,24 @@
         android:id="@+id/tv_BMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/profilePic"
         android:layout_below="@+id/editProfile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="casual"
-        android:hint="Name"
+        android:hint="Bmi"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_BMI_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_BMI"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:fontFamily="casual"
+        android:hint="BMI_Stat"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="24sp" />
@@ -48,7 +61,7 @@
         android:id="@+id/et_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_BMI"
+        android:layout_below="@+id/tv_BMI_Status"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:ems="10"
@@ -68,18 +81,29 @@
         android:ems="10"
         android:fontFamily="casual"
         android:hint="Weight [KG]"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textColorHint="@color/common_google_signin_btn_text_dark_focused" />
 
     <Button
-        android:id="@+id/complete"
+        android:id="@+id/Calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_weight"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:onClick="Update"
+        android:layout_alignBaseline="@+id/Back"
+        android:layout_alignBottom="@+id/Back"
+        android:layout_alignStart="@+id/et_weight"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        android:text="Finish" />
+        android:onClick="calc"
+        android:text="Calculate" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_weight"
+        android:layout_below="@+id/et_weight"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:onClick="Back"
+        android:text="Back " />
 </RelativeLayout>

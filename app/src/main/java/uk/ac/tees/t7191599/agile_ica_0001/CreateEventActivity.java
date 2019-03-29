@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CreateEventActivity extends AppCompatActivity {
     ListView lv;
-    String[] eventTypes = new String[]{"Gym Event", "Step Tracker", "Meal Plan", "Health Tracker", ""};
+    String[] eventTypes = new String[]{"Gym Event", "Step Tracker", "Meal Plan", "Health Tracker", "BMI Calc"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,10 @@ public class CreateEventActivity extends AppCompatActivity {
 
                 if (position == 4)
                 {
-
+                    Intent intent = new Intent(view.getContext(), BMICalcActivity.class);
+                    User u = (User) getIntent().getSerializableExtra("User");
+                    intent.putExtra("User",u);
+                    startActivity(intent);
 
                 }
 

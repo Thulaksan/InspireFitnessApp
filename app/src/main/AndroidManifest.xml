@@ -38,7 +38,10 @@
         <activity android:name=".EditProfile" />
         <activity android:name=".toutoralPage" />
         <activity android:name=".HealthTracker" />
-        <activity android:name=".BMICalcActivity"></activity>
+        <activity
+            android:name=".BMICalcActivity"
+            android:label="@string/title_activity_bmicalc"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
