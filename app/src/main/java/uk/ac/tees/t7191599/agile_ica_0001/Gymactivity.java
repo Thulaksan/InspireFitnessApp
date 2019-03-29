@@ -39,13 +39,6 @@ public class Gymactivity extends AppCompatActivity {
         populateDate();
         populateScroller(u);
 
-
-
-
-
-
-
-
     }
 
     private void populateDate(){
