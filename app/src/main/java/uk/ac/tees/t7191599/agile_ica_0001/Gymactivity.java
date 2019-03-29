@@ -190,4 +190,14 @@ public class Gymactivity extends AppCompatActivity {
         EventList.add(new WorkOut(EventName,Amount));
         populateScroller(u);
     }
+
+    public void SaveAs(View view){
+        u.setCommonWorkOut(EventList);
+
+    }
+    public void LoadAs(View view){
+        EventList= u.getCommonWorkOut();
+
+    }
+
 }
