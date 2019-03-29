@@ -25,7 +25,7 @@ public class HealthTracker extends AppCompatActivity {
 
     public void Water(View view){
 
-            et_Water = findViewById(R.id.et_Water);
+            et_Water = findViewById(R.id.et_weight);
             String w =et_Water.getText().toString().trim();
             int Water = Integer.parseInt(w);
             WaterTracker x = new WaterTracker(Water,Date);
@@ -34,7 +34,7 @@ public class HealthTracker extends AppCompatActivity {
         }
 
     public void Sleep(View view){
-        et_Sleep = findViewById(R.id.et_Sleep);
+        et_Sleep = findViewById(R.id.et_height);
         String s =et_Sleep.getText().toString().trim();
         int Sleep = Integer.parseInt(s);
         SleepTracler x = new SleepTracler(Sleep,Date);

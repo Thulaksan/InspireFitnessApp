@@ -29,7 +29,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tv|_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editProfile"
@@ -42,11 +42,11 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/et_Sleep"
+        android:id="@+id/et_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/tv|_name"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -56,11 +56,11 @@
         android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
 
     <EditText
-        android:id="@+id/et_Water"
+        android:id="@+id/et_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/et_Sleep"
+        android:layout_below="@+id/et_height"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -102,9 +102,9 @@
     <android.support.v7.widget.CardView
         android:layout_width="60dp"
         android:layout_height="55dp"
-        android:layout_alignTop="@+id/et_Sleep"
+        android:layout_alignTop="@+id/et_height"
         android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/et_Sleep"
+        android:layout_toEndOf="@+id/et_height"
         app:cardBackgroundColor="@color/colorAccent"
         android:id="@+id/updateSleep"
         android:onClick="Sleep"
@@ -130,7 +130,7 @@
         android:layout_width="60dp"
         android:layout_height="55dp"
         android:layout_alignStart="@+id/updateSleep"
-        android:layout_alignTop="@+id/et_Water"
+        android:layout_alignTop="@+id/et_weight"
         app:cardBackgroundColor="@color/colorAccent"
         android:onClick="Water"
         app:cardCornerRadius="24dp" >

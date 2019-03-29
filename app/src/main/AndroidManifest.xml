@@ -37,7 +37,8 @@
         <activity android:name=".UserProfile" />
         <activity android:name=".EditProfile" />
         <activity android:name=".toutoralPage" />
-        <activity android:name=".HealthTracker"></activity>
+        <activity android:name=".HealthTracker" />
+        <activity android:name=".BMICalcActivity"></activity>
     </application>
 
 </manifest>

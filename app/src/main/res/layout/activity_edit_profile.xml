@@ -32,7 +32,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editProfile"
@@ -45,10 +45,10 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/et_Sleep"
+        android:id="@+id/et_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/tv_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:ems="10"
@@ -59,11 +59,11 @@
         android:textColorHint="@color/common_google_signin_btn_text_dark_focused" />
 
     <EditText
-        android:id="@+id/et_Water"
+        android:id="@+id/et_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/et_Sleep"
-        android:layout_below="@+id/et_Sleep"
+        android:layout_alignStart="@+id/et_height"
+        android:layout_below="@+id/et_height"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -76,9 +76,10 @@
         android:id="@+id/complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_Water"
+        android:layout_below="@+id/et_weight"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
+        android:onClick="Update"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="Finish" />
 </RelativeLayout>
