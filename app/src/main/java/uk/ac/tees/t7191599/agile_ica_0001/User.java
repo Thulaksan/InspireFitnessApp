@@ -26,12 +26,6 @@ public class User implements Serializable {
         CommonWorkOut = commonWorkOut;
     }
 
-
-
-
-
-
-
     public Long getDoB() {
         return DoB;
     }

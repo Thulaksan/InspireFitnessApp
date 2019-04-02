@@ -28,6 +28,16 @@ public class Body_Details implements Serializable {
         }
 
     }
+
+    public Long getDate() {
+        return Date;
+    }
+    public String getBMIStat() {
+        return BMIStat;
+    }
+    public void setBMIStat(String BMIStat) {
+        this.BMIStat = BMIStat;
+    }
     public Double getHeight() {
         return Height;
     }

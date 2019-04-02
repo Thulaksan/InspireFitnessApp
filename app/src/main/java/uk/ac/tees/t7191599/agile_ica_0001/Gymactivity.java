@@ -80,7 +80,7 @@ public class Gymactivity extends AppCompatActivity {
 
         ArrayList< String > ListViewEvents = new ArrayList< String >();
         for (WorkOut item: EventList) {
-            String  x = item.Exersize.toString() +" x" +item.Reps;
+            String  x = item.getExersize().toString() +" x" +item.getReps();
             ListViewEvents.add(x);
         }
 
