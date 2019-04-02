@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/foodSearchBar"
-        android:layout_width="250dip"
+        android:layout_width="210dip"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="13dp"
@@ -34,11 +34,10 @@
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
-        android:layout_height="40dip"
+        android:layout_height="48dip"
         android:layout_alignBaseline="@+id/foodSearchBar"
         android:layout_alignBottom="@+id/foodSearchBar"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@+id/foodSearchBar"
         android:text="Search" />
 
     <TextView
@@ -53,6 +52,16 @@
         android:text="TextView"
         android:textColor="@android:color/holo_red_light"
         android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/searchButton"
+        android:layout_toEndOf="@+id/searchButton"
+        android:onClick="AddEvent"
+        android:text="Save" />
 
 </RelativeLayout>
 
