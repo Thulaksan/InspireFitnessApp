@@ -1,5 +1,6 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class NutritionPlanner extends AppCompatActivity {
@@ -32,11 +34,14 @@ public class NutritionPlanner extends AppCompatActivity {
     private int reccommendedKcal = 2500;
     private int currentKcal;
 
+    User u;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        u = (User) getIntent().getSerializableExtra("User");
         setContentView(R.layout.activity_nutrition_planner);
 
         foodName = (EditText) findViewById(R.id.foodSearchBar);
@@ -106,21 +111,24 @@ public class NutritionPlanner extends AppCompatActivity {
         return numb;
     }
 
+    public void AddEvent(View view){
+
+        Calendar c = Calendar.getInstance();
+        c.getTime();
+        c.getTimeInMillis();
+
+        Long Date =c.getTimeInMillis();
+
+        u.getEvents().add(new MealPlannerEvent(Date,displayArr, kCalArray));
+        Firebase f = new Firebase();
+        f.DBUser(u);
+        Intent intent = new Intent(this, EventListActivity.class);
+        intent.putExtra("User",u);
+        startActivity(intent);
+
+    }
 
 
-//    public void saveButton(View save)
-//    {
-//        String date = getCurrentTimeUsingDate();
-//        MealPlannerEvent saveMeal = new MealPlannerEvent("Meal Planner", date , displayArr);
-//    }
-//
-//    public static String getCurrentTimeUsingDate() {
-//        Date date = new Date();
-//        String strDateFormat = "hh:mm:ss a";
-//        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-//        String formattedDate= dateFormat.format(date);
-//        return formattedDate;
-// }
 
 }
 

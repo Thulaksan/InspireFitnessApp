@@ -191,6 +191,10 @@ public class Gymactivity extends AppCompatActivity {
     public void LoadAs(View view){
         EventList= u.getCommonWorkOut();
 
+
     }
+
+
+
 
 }
