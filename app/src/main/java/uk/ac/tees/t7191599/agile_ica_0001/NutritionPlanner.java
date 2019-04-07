@@ -44,16 +44,21 @@ public class NutritionPlanner extends AppCompatActivity {
         u = (User) getIntent().getSerializableExtra("User");
         setContentView(R.layout.activity_nutrition_planner);
 
+
+
         foodName = (EditText) findViewById(R.id.foodSearchBar);
         kCalComparison = findViewById(R.id.calorieComparison);
         searchButton = findViewById(R.id.searchButton);
 
          displayArr = new ArrayList();
          kCalArray = new ArrayList();
+        displayArr = (ArrayList) getIntent().getExtras().get("loadarr");
 
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
+
         listView.setAdapter(adapter);
+
 
 
         currentKcal = totalCalorie();

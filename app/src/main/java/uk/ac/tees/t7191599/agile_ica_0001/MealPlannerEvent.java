@@ -19,4 +19,7 @@ public class MealPlannerEvent extends Event implements Serializable {
         this.kCalArray = kCalArray;
     }
 
+    public ArrayList getDisplayArr() {
+        return displayArr;
+    }
 }
