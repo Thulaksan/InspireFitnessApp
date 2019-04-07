@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,6 +22,22 @@ public class EventListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_list);
         populateListView();
 
+        listViewEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == position)
+                {
+                    if (events.get(position).getName().matches("Meal planner"))
+                    {
+                        Intent intent = new Intent(view.getContext(), NutritionPlanner.class);
+                        User u = (User) getIntent().getSerializableExtra("User");
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                    }
+
+                }
+            }
+        });
 
 
 
