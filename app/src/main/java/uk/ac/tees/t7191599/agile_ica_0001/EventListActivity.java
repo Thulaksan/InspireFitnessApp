@@ -31,12 +31,10 @@ public class EventListActivity extends AppCompatActivity {
                     {
                         Intent intent = new Intent(view.getContext(), NutritionPlanner.class);
                         User u = (User) getIntent().getSerializableExtra("User");
-                        MealPlannerEvent meal = (MealPlannerEvent) events.get(position);
-                        ArrayList a = meal.getDisplayArr();
 
 
                         intent.putExtra("User",u);
-                        intent.putExtra("loadarr", a);
+                        intent.putExtra("position", position);
                         startActivity(intent);
                     }
 

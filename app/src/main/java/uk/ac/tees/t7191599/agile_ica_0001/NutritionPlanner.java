@@ -26,6 +26,7 @@ public class NutritionPlanner extends AppCompatActivity {
     public static TextView kCalComparison;
 
 
+    int loadId;
 
 
     public static ArrayList displayArr;
@@ -44,6 +45,7 @@ public class NutritionPlanner extends AppCompatActivity {
         u = (User) getIntent().getSerializableExtra("User");
         setContentView(R.layout.activity_nutrition_planner);
 
+        loadId = getIntent().getIntExtra("position", 0);
 
 
         foodName = (EditText) findViewById(R.id.foodSearchBar);
@@ -52,7 +54,17 @@ public class NutritionPlanner extends AppCompatActivity {
 
          displayArr = new ArrayList();
          kCalArray = new ArrayList();
-        displayArr = (ArrayList) getIntent().getExtras().get("loadarr");
+
+         Event hello = u.getEvents().get(loadId);
+
+         if (hello instanceof MealPlannerEvent)
+         {
+             reccommendedKcal = 1000;
+         }
+         else
+         {
+             reccommendedKcal = 1;
+         }
 
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
@@ -74,8 +86,6 @@ public class NutritionPlanner extends AppCompatActivity {
                 foodSearchApi.setFoodName(foodName.getText().toString());
                 foodSearchApi.setCals(currentKcal, reccommendedKcal);
                 foodSearchApi.execute();
-
-
             }
         });
 
@@ -132,6 +142,7 @@ public class NutritionPlanner extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 
 
 
