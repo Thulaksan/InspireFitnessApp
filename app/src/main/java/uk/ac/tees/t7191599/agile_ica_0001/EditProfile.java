@@ -40,7 +40,7 @@ public class EditProfile extends AppCompatActivity {
         Body_Details bd = new Body_Details(height,weight,Date);
         u.setCurrent(bd);
         u.getBodyHistory().add(bd);
-        Firebase.DBUser(u);
+        firebase.DBUser(u);
 
         Intent intent = new Intent(this, EventListActivity.class);
         intent.putExtra("User",u);

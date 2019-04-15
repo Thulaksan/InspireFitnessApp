@@ -14,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +28,7 @@ public class First_loginActivity extends AppCompatActivity {
 
 
     ImageView propic;
+    Firebase firebase= new Firebase();
     EditText et_First_Name,et_Second_Name,et_Height,et_Weight;
     TextView et_DoB;
     Uri ImageUri;
@@ -103,7 +105,9 @@ public class First_loginActivity extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             ImageUri = data.getData();
+            firebase.UploadImage(ImageUri);
             propic.setImageURI(ImageUri);
+
         }
     }
 
@@ -124,6 +128,12 @@ public class First_loginActivity extends AppCompatActivity {
         et_DoB =  findViewById(R.id.et_DoB);
         et_Height =  findViewById(R.id.et_Height);
         et_Weight =  findViewById(R.id.et_Weight);
+        ImageName = firebase.getImageURL();
+
+        if (ImageName ==null) {
+            Toast.makeText(this, "Please Make sure to Add an Image, If an Image has been select please wait 5 seconds and try again", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
 
@@ -133,7 +143,6 @@ public class First_loginActivity extends AppCompatActivity {
         Calendar UpdateDate = Calendar.getInstance();
         Calendar DoB = cal;
         String Email = user.getEmail();
-        ImageName = Firebase.UploadImage(ImageUri);
         String H = et_Height.getText().toString().trim();
         String W = et_Weight.getText().toString().trim();
 
@@ -148,6 +157,7 @@ public class First_loginActivity extends AppCompatActivity {
             et_Second_Name.requestFocus();
             return;
         }
+
         if (H ==null) {
             et_Height.setError("This Cant be Empty");
             et_Height.requestFocus();
@@ -168,7 +178,7 @@ public class First_loginActivity extends AppCompatActivity {
 
         User TempUser = new User(FirstName,SecondName,Email,Height,Weight,DoB.getTimeInMillis(),ImageName,UpdateDate.getTimeInMillis());
 
-        Firebase.DBUser(TempUser);
+        firebase.DBUser(TempUser);
         Intent intent = new Intent(First_loginActivity.this, EventListActivity.class);
 
         intent.putExtra("User",TempUser);

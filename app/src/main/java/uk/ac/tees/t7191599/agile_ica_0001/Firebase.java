@@ -31,15 +31,15 @@ public class Firebase implements Serializable {
 
 
     private FirebaseAuth mAuth= FirebaseAuth.getInstance();
-    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private  FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseFirestoreSettings settings;
     static Long x = System.currentTimeMillis();
     static FirebaseStorage storage = FirebaseStorage.getInstance();
-    private static StorageReference ImageStorage = storage.getReference(x.toString());
+    private  StorageReference ImageStorage = storage.getReference(x.toString());
     private Firebase fb;
     private Activity act;
     private User user;
-    private static String ImageURL;
+    private String ImageURL;
 
 
 
@@ -126,15 +126,14 @@ public class Firebase implements Serializable {
 
     }
 
-    public static String UploadImage(Uri image) {
+    public String UploadImage(Uri image) {
 
-        // attempts to place a image in the root directly of firebase storage,
+
         ImageStorage.putFile(image).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
         {
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
             {
-                //error management
                 if (!task.isSuccessful())
                 {
                     throw task.getException();
@@ -149,30 +148,28 @@ public class Firebase implements Serializable {
             {
                 if (task.isSuccessful())
                 {
-                    //gets URl for saved imaged
                     Uri downloadUri = task.getResult();
 
-                    //waits for the Async task to finish
                     while((downloadUri.toString()==null)){
                     downloadUri = task.getResult();
                 }
 
-                    // Assigns URl to var to get around inner class issues
+
                     setImageURL(downloadUri.toString());
 
                 }
             }
         });
 
-        // gets and returns to get around inner class issues
+
     return getImageURL();
     }
 
-    public static String getImageURL() {
+    public  String getImageURL() {
         return ImageURL;
     }
 
-    public static void setImageURL(String imageURL) {
+    public  void setImageURL(String imageURL) {
         ImageURL = imageURL;
     }
 
@@ -184,7 +181,7 @@ public class Firebase implements Serializable {
         this.act = act;
     }
 
-    public static void DBUser(User Temp){
+    public void DBUser(User Temp){
 
         db.collection("Users").document(Temp.getEmail())
                 .set(Temp, SetOptions.merge())
@@ -217,12 +214,6 @@ public class Firebase implements Serializable {
                 }
             }
         });
-//    while (task.isSuccessful() !=true){
-//    }
-//        User u = task.getResult().toObject(User.class);
-//        System.out.println(u.getFirst_Name());
-//
-//  return u;
     }
 
     public User getUser() {
