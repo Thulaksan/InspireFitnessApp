@@ -8,18 +8,32 @@ import java.util.List;
  * Created by t7207089 on 02/04/19.
  */
 
-public class MealPlannerEvent extends Event implements Serializable {
+public class MealPlannerEvent implements Serializable {
 
     private ArrayList displayArr;
     private List<Integer> kCalArray;
 
-    public MealPlannerEvent(Long date, ArrayList displayArr, List<Integer> kCalArray) {
-        super("Meal planner", date);
+    public MealPlannerEvent() {
+    }
+
+    public MealPlannerEvent(ArrayList displayArr, List<Integer> kCalArray) {
         this.displayArr = displayArr;
         this.kCalArray = kCalArray;
     }
 
     public ArrayList getDisplayArr() {
         return displayArr;
+    }
+
+    public List<Integer> getkCalArray() {
+        return kCalArray;
+    }
+
+    public void setDisplayArr(ArrayList displayArr) {
+        this.displayArr = displayArr;
+    }
+
+    public void setkCalArray(List<Integer> kCalArray) {
+        this.kCalArray = kCalArray;
     }
 }

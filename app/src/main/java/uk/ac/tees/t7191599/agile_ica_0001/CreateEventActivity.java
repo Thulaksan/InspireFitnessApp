@@ -56,6 +56,7 @@ public class CreateEventActivity extends AppCompatActivity {
                     Intent intent = new Intent(view.getContext(), StepInterface.class);
                     User u = (User) getIntent().getSerializableExtra("User");
                     intent.putExtra("User",u);
+                    intent.putExtra("position", -1);
                     startActivity(intent);
 
                 }
