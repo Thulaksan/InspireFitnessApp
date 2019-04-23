@@ -26,8 +26,6 @@ public class NutritionPlanner extends AppCompatActivity {
     public static TextView kCalComparison;
 
 
-
-
     public static ArrayList displayArr;
     public static List<Integer> kCalArray;
 
@@ -44,6 +42,9 @@ public class NutritionPlanner extends AppCompatActivity {
         u = (User) getIntent().getSerializableExtra("User");
         setContentView(R.layout.activity_nutrition_planner);
 
+
+
+
         foodName = (EditText) findViewById(R.id.foodSearchBar);
         kCalComparison = findViewById(R.id.calorieComparison);
         searchButton = findViewById(R.id.searchButton);
@@ -51,8 +52,31 @@ public class NutritionPlanner extends AppCompatActivity {
          displayArr = new ArrayList();
          kCalArray = new ArrayList();
 
+
+
+
+
+        MealPlannerEvent mEvent =(MealPlannerEvent) getIntent().getSerializableExtra("position");
+
+        if (mEvent != null)
+        {
+
+            displayArr = mEvent.getDisplayArr();
+            kCalArray = mEvent.getkCalArray();
+        }
+
+
+
+
+
+
+
+
+
+
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
+
         listView.setAdapter(adapter);
 
 
@@ -69,8 +93,6 @@ public class NutritionPlanner extends AppCompatActivity {
                 foodSearchApi.setFoodName(foodName.getText().toString());
                 foodSearchApi.setCals(currentKcal, reccommendedKcal);
                 foodSearchApi.execute();
-
-
             }
         });
 
@@ -118,8 +140,9 @@ public class NutritionPlanner extends AppCompatActivity {
         c.getTimeInMillis();
 
         Long Date =c.getTimeInMillis();
+        MealPlannerEvent mealPlannerEvent = new MealPlannerEvent(displayArr, kCalArray);
 
-        u.getEvents().add(new MealPlannerEvent(Date,displayArr, kCalArray));
+        u.getEvents().add(new Event("Meal planner", Date, mealPlannerEvent));
         Firebase f = new Firebase();
         f.DBUser(u);
         Intent intent = new Intent(this, EventListActivity.class);
@@ -127,8 +150,6 @@ public class NutritionPlanner extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-
 
 }
 

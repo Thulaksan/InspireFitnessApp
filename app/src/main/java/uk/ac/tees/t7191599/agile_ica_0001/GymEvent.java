@@ -8,7 +8,7 @@ public class GymEvent extends Event implements Serializable {
     private ArrayList<WorkOut> WorkOuts = new ArrayList<WorkOut>();
 
     public GymEvent(Long date, ArrayList<WorkOut> workOuts) {
-        super("Gym Workout", date);
+        super("Gym Workout", date, new MealPlannerEvent());
         WorkOuts = workOuts;
     }
 }

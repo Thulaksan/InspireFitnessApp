@@ -7,7 +7,7 @@ public class SleepTracler extends Event implements Serializable {
     private int SleepAmount;
 
     public SleepTracler(int Sleep, Long date) {
-        super("Sleep Update", date);
+        super("Sleep Update", date, new MealPlannerEvent());
         this.SleepAmount = Sleep;
     }
 
