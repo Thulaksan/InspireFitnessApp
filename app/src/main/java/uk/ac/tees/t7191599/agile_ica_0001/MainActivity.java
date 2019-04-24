@@ -43,10 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Aaron
 
-    public void gotosteptracker(View view){
-        Intent intent = new Intent(this, StepInterface.class);
-        startActivity(intent);
-    }
+
 
 
     //Jason
