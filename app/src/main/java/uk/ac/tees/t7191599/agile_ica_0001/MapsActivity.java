@@ -27,6 +27,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import uk.ac.tees.t7191599.agile_ica_0001.GetGyms;
+import uk.ac.tees.t7191599.agile_ica_0001.R;
+
 
 class MapsActivity extends FragmentActivity implements
         OnMapReadyCallback,
