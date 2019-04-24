@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/userpicture" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/calorieComparisonList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Iv_ProfilePic"
@@ -33,7 +33,7 @@
         android:layout_width="200dp"
         android:layout_height="32dp"
         android:layout_alignStart="@+id/tv_Email"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/calorieComparisonList"
         android:layout_marginTop="24dp"
         android:fontFamily="casual"
         android:hint="Name"
@@ -107,7 +107,7 @@
 
         android:layout_alignBaseline="@+id/tv_Weight"
         android:layout_alignBottom="@+id/tv_Weight"
-        android:layout_toEndOf="@+id/textView2"
+        android:layout_toEndOf="@+id/calorieComparisonList"
         android:fontFamily="casual"
         android:hint="BMI"
         android:textAlignment="center"

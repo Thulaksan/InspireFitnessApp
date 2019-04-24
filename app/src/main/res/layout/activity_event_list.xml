@@ -18,7 +18,7 @@
             android:layout_width="30dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@+id/eventListView"
+            android:layout_toStartOf="@+id/calorieComparisonList"
             android:onClick="viewProfile"
             app:srcCompat="@drawable/userpicture" />
 
@@ -30,7 +30,7 @@
             app:srcCompat="@android:drawable/ic_menu_add" />
 
         <ListView
-            android:id="@+id/eventListView"
+            android:id="@+id/calorieComparisonList"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
