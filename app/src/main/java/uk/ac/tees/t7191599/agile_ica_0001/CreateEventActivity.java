@@ -17,7 +17,7 @@ import java.util.List;
 
 public class CreateEventActivity extends AppCompatActivity {
     ListView lv;
-    String[] eventTypes = new String[]{"Gym Event", "Step Tracker", "Meal Plan", "Health Tracker", "BMI Calc"};
+    String[] eventTypes = new String[]{"Gym Event", "Step Tracker", "Meal Plan", "Health Tracker", "BMI Calc","BIM Graph","Gyms Near Me"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,56 +40,51 @@ public class CreateEventActivity extends AppCompatActivity {
         lv.setAdapter(stringAdapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            Intent intent;
+            User u = (User) getIntent().getSerializableExtra("User");
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0)
-                {
 
-                    Intent intent = new Intent(view.getContext(), Gymactivity.class);
-                    User u = (User) getIntent().getSerializableExtra("User");
-                    intent.putExtra("User",u);
-                    startActivity(intent);
-
+                switch (position) {
+                    case 0:
+                        intent = new Intent(view.getContext(), Gymactivity.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(view.getContext(), StepTracker.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), NutritionPlanner.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(view.getContext(), HealthTracker.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(view.getContext(), BMICalcActivity.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(view.getContext(), BmiVisual.class);
+                        intent.putExtra("User", u);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(view.getContext(), MapsActivity.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
                 }
-                if (position == 1)
-                {
-                    Intent intent = new Intent(view.getContext(), StepInterface.class);
-                    User u = (User) getIntent().getSerializableExtra("User");
-                    intent.putExtra("User",u);
-                    intent.putExtra("position", -1);
-                    startActivity(intent);
-
-                }
-
-                if (position == 2)
-                {
-                    Intent intent = new Intent(view.getContext(), NutritionPlanner.class);
-                    User u = (User) getIntent().getSerializableExtra("User");
-                    intent.putExtra("User",u);
-                    startActivity(intent);
-                }
-
-                if (position == 3)
-                {
-                    Intent intent = new Intent(view.getContext(), HealthTracker.class);
-                    User u = (User) getIntent().getSerializableExtra("User");
-                    intent.putExtra("User",u);
-                    startActivity(intent);
-
-
-
-                }
-
-                if (position == 4)
-                {
-                    Intent intent = new Intent(view.getContext(), BMICalcActivity.class);
-                    User u = (User) getIntent().getSerializableExtra("User");
-                    intent.putExtra("User",u);
-                    startActivity(intent);
-
-                }
-
-
 
 
 

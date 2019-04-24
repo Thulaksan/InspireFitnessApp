@@ -6,4 +6,5 @@
     <string name="_0">0</string>
     <string name="click_to_add_date">Click to add Date</string>
     <string name="title_activity_bmicalc">BMICalcActivity</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

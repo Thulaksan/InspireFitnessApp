@@ -8,18 +8,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public class NutritionPlanner extends AppCompatActivity {
-    Button searchButton;
+    ImageButton searchButton;
     EditText foodName;
     ListView listView;
     public static ArrayAdapter adapter;
@@ -46,7 +44,7 @@ public class NutritionPlanner extends AppCompatActivity {
 
 
         foodName = (EditText) findViewById(R.id.foodSearchBar);
-        kCalComparison = findViewById(R.id.calorieComparison);
+        kCalComparison = findViewById(R.id.calorieComparisonList);
         searchButton = findViewById(R.id.searchButton);
 
          displayArr = new ArrayList();
@@ -74,10 +72,10 @@ public class NutritionPlanner extends AppCompatActivity {
 
 
 
-        listView = (ListView) findViewById(R.id.listView);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
+        listView =findViewById(R.id.calorieComparisonlis);
+        adapter = new ArrayAdapter(this, R.layout.listrow, R.id.textView2, displayArr);
 
-        listView.setAdapter(adapter);
+       listView.setAdapter(adapter);
 
 
         currentKcal = totalCalorie();

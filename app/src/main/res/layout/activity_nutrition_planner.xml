@@ -1,67 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@drawable/space_background_1"
+tools:context="uk.ac.tees.t7191599.agile_ica_0001.NutritionPlanner"
+>
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.NutritionPlanner"
-    android:background="@drawable/space_background_1">
-
-    <ListView
-        android:layout_below="@id/calorieComparison"
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="380dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/cardview_light_background" />
-
-    <EditText
-        android:id="@+id/foodSearchBar"
-        android:layout_width="210dip"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="17dp"
-        android:background="@color/cardview_light_background"
-        android:ems="10"
-        android:hint="Search For Food"
-        android:inputType="text"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="18dip" />
-
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="48dip"
-        android:layout_alignBaseline="@+id/foodSearchBar"
-        android:layout_alignBottom="@+id/foodSearchBar"
-        android:layout_toEndOf="@+id/foodSearchBar"
-        android:text="Search" />
+    android:layout_weight="8"
+    android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/calorieComparison"
-        android:layout_width="700dip"
-        android:layout_height="30dip"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/searchButton"
-        android:layout_marginTop="17dp"
-        android:background="#1000"
 
-        android:text="TextView"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="14sp" />
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:text="Meal Planner"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="40sp"
+        android:visibility="visible" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="60dip"
-        android:layout_height="40dip"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/searchButton"
-        android:layout_toEndOf="@+id/searchButton"
-        android:onClick="AddEvent"
-        android:text="Save" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:contentDescription="logo"
+        app:srcCompat="@drawable/fruit" />
 
-</RelativeLayout>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="8"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/foodSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/calorieComparisonList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:text="Food Content Goes Here" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/search" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:onClick="AddEvent"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/save" />
+    </LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="3"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/calorieComparisonlis"
+        android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/cardview_light_background"
+        android:cacheColorHint="@color/cardview_light_background"
+        android:divider="@color/cardview_light_background"
+        android:dividerHeight="1dip"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="#8dd9de"
+        android:scrollbars="horizontal|vertical"/>
+
+
+</LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
 
