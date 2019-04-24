@@ -63,7 +63,9 @@ public class GetGyms extends AsyncTask<Object,String,String> {
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+
+            System.out.println("lat is "+lat+"\n Long is "+lng +"\n name is " +nameOfPlace+".");
         }
     }
 
@@ -82,9 +84,7 @@ public class GetGyms extends AsyncTask<Object,String,String> {
                 Places.add(new GymPlace(Name,Long,lat));
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

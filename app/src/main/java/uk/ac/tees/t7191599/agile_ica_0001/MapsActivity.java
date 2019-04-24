@@ -70,10 +70,15 @@ class MapsActivity extends FragmentActivity implements
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             buildGoogleApiClient();
+            //Getloc();
+
             mMap.setMyLocationEnabled(true);
             transferData[0] = mMap;
-            // transferData[1] = getUrl(latitide,longitude,"Gym");
-            transferData[1] = "https://api.myjson.com/bins/16q4a0";
+
+
+            System.out.println(latitide + " and " + longitude);
+            transferData[1] = getUrl(latitide, longitude);
+           // transferData[1] = "https://api.myjson.com/bins/16q4a0";
             GetGyms Gyms = new GetGyms();
             Gyms.execute(transferData);
 
@@ -82,10 +87,10 @@ class MapsActivity extends FragmentActivity implements
 
     }
 
-    private String getUrl(double latitide, double longitude, String nearbyPlace) {
+    private String getUrl(double latitide, double longitude) {
         StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googleURL.append("location=" + latitide + "," + longitude);
-        googleURL.append("&radius=" + 10000);
+        googleURL.append("&radius=" + 1000);
         googleURL.append("&type=" + "gym");
         googleURL.append("&sensor=true");
         googleURL.append("&key=" + "AIzaSyDi9KQlXqnaYLlJoxuSbUTlTMNLTjLI-ig");
@@ -108,8 +113,20 @@ class MapsActivity extends FragmentActivity implements
         }
     }
 
+    public void Getloc() {
+        Object transferData[] = new Object[2];
+        transferData[0] = mMap;
 
-    @Override
+
+        System.out.println(latitide + " and " + longitude);
+        transferData[1] = getUrl(latitide, longitude);
+        // transferData[1] = "https://api.myjson.com/bins/16q4a0";
+        GetGyms Gyms = new GetGyms();
+        Gyms.execute(transferData);
+
+
+    }
+
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case Request_User_Location_Code:
@@ -141,15 +158,15 @@ class MapsActivity extends FragmentActivity implements
 
     @Override
     public void onLocationChanged(Location location) {
+
         latitide = location.getLatitude();
         longitude = location.getLongitude();
-
         lastLocation = location;
 
         if (currentUserLocationMarker != null) {
             currentUserLocationMarker.remove();
         }
-
+        Getloc();
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
         MarkerOptions markerOptions = new MarkerOptions();
@@ -160,7 +177,7 @@ class MapsActivity extends FragmentActivity implements
         currentUserLocationMarker = mMap.addMarker(markerOptions);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(21));
+        mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
 
         if (googleApiClient != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
@@ -178,7 +195,6 @@ class MapsActivity extends FragmentActivity implements
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
         }
-
 
     }
 
