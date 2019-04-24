@@ -13,7 +13,7 @@
         android:layout_alignStart="@+id/textView_date"
         android:layout_centerVertical="true"
         android:hint="Name"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="#ffffff"
         android:textSize="24sp" />
 
     <TextView
@@ -25,14 +25,14 @@
         android:layout_marginTop="15dp"
         android:layout_toEndOf="@+id/image"
         android:hint="Date"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="#ffffff"
         android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="60dip"
         android:layout_height="60dip"
-        android:layout_alignBottom="@+id/textView_date"
         android:layout_alignTop="@+id/textView_name"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:layout_alignBottom="@+id/textView_date"
+        app:srcCompat="@drawable/logo" />
 </RelativeLayout>

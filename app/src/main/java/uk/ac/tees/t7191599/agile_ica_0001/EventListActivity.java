@@ -53,7 +53,7 @@ public class EventListActivity extends AppCompatActivity {
 
         User u = (User) getIntent().getSerializableExtra("User");
         events = u.getEvents();
-        listViewEvents = (ListView) findViewById(R.id.calorieComparisonList);
+        listViewEvents = (ListView) findViewById(R.id.eventListView);
         adapter= new eventAdapter(this,events);
         listViewEvents.setAdapter(adapter);
 

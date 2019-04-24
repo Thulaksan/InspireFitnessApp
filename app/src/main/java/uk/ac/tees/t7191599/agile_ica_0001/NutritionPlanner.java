@@ -73,9 +73,9 @@ public class NutritionPlanner extends AppCompatActivity {
 
 
         listView =findViewById(R.id.calorieComparisonlis);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayArr);
+        adapter = new ArrayAdapter(this, R.layout.listrow, R.id.textView2, displayArr);
 
-        listView.setAdapter(adapter);
+       listView.setAdapter(adapter);
 
 
         currentKcal = totalCalorie();
