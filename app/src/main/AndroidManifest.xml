@@ -37,7 +37,7 @@
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".BmiVisual" />
         <activity android:name=".Gymactivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,15 +45,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUPActivity" />
-        <activity
-            android:name=".LogInActivity"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
         <activity android:name=".EventListActivity" />
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".NutritionPlanner" />
