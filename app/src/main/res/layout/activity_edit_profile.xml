@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="uk.ac.tees.t7191599.agile_ica_0001.EditProfile"
-    android:background="@drawable/faded"
+    android:background="@drawable/space_background_1"
     >
 
     <ImageView
@@ -16,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
+        android:background="@null"
         app:srcCompat="@drawable/userpicture" />
 
     <TextView
@@ -27,8 +28,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="casual"
         android:hint="Edit User Profile"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
     <TextView
@@ -40,8 +40,7 @@
         android:layout_marginTop="12dp"
         android:fontFamily="casual"
         android:hint="Name"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
     <EditText
@@ -55,8 +54,7 @@
         android:fontFamily="casual"
         android:hint="Hight [M]"
         android:inputType="numberDecimal"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_focused" />
+        android:textColor="#FFFFFF" />
 
     <EditText
         android:id="@+id/et_weight"
@@ -69,10 +67,9 @@
         android:fontFamily="casual"
         android:hint="Weight [KG]"
         android:inputType="number"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_focused" />
+        android:textColor="#FFFFFF" />
 
-    <Button
+    <ImageButton
         android:id="@+id/complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,6 +77,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:onClick="Update"
-        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:background="@null"
+        app:srcCompat="@drawable/finish"
         android:text="Finish" />
 </RelativeLayout>
