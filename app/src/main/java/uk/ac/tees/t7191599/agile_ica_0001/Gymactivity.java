@@ -167,6 +167,12 @@ public class Gymactivity extends AppCompatActivity {
 
     public void AddEvent(View view){
         Long Date =c.getTimeInMillis();
+
+        if ( Date==null) {
+            tv_Date.setError("This Cant be Empty,Click Text to Add Date of Birth");
+            tv_Date.requestFocus();
+            return;
+        }
         u.getEvents().add(new GymEvent(Date,EventList));
         Firebase f = new Firebase();
         f.DBUser(u);
