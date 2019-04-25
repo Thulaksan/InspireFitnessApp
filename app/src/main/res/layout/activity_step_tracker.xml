@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="469dp"
-        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
         android:orientation="horizontal">
 
         <TextView
@@ -41,7 +41,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0"
+        android:layout_weight="2"
         android:orientation="vertical">
 
         <LinearLayout
@@ -169,9 +169,24 @@
                 android:text="102 Minutes"
                 android:textAlignment="textStart"
                 android:textColor="?attr/colorButtonNormal"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null"
+            app:srcCompat="@drawable/finish" />
     </LinearLayout>
 
 
