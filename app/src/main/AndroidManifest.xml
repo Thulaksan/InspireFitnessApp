@@ -56,6 +56,9 @@
             android:name=".BMICalcActivity"
             android:label="@string/title_activity_bmicalc"
             android:theme="@style/AppTheme.NoActionBar" />
+        <receiver android:name=".MyBroadcastR" />
+        <service android:name=".MyService" />
     </application>
+
 
 </manifest>

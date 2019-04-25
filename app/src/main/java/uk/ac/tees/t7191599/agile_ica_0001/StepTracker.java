@@ -30,7 +30,7 @@ public class StepTracker extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
 
             String StepsTaken = intent.getStringExtra("Steps");
-            ;
+
             int Steps = Integer.valueOf(StepsTaken);
             tv_steps.setText(String.format("you have walked %s", Steps));
         }
