@@ -79,7 +79,7 @@
                 tools:text="Steps Done " />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_step"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -107,7 +107,7 @@
                 tools:text="Distance Walked" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tv_distance"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -135,7 +135,7 @@
                 tools:text="Calories Burned" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_calories"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -162,7 +162,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_time"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
