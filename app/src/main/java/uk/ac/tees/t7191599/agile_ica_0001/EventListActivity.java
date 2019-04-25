@@ -46,12 +46,23 @@ public class EventListActivity extends AppCompatActivity {
                         Intent intent = new Intent(view.getContext(), NutritionPlanner.class);
                         User u = (User) getIntent().getSerializableExtra("User");
 
-                        MealPlannerEvent mEvent = (MealPlannerEvent) u.getEvents().get(position).getEventsstore();
+                        MealPlannerEvent mEvent = (MealPlannerEvent) u.getEvents().get(position).getMeal();
 
 
                         intent.putExtra("User",u);
                         intent.putExtra("position", mEvent);
                         startActivity(intent);
+                    }
+                    else if (events.get(position).getName().matches("gym activity"))
+                    {
+                        Intent intent = new Intent(view.getContext(), Gymactivity.class);
+                        User u = (User) getIntent().getSerializableExtra("User");
+
+                        GymEvent gymEvent = u.getEvents().get(position).getGymEvent();
+                        intent.putExtra("User",u);
+                        intent.putExtra("position", gymEvent);
+                        startActivity(intent);
+
                     }
 
                 }
@@ -72,8 +83,6 @@ public class EventListActivity extends AppCompatActivity {
         listViewEvents.setAdapter(adapter);
 
     }
-
-
 
 
     public void CreateEvent(View view)

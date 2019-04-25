@@ -77,6 +77,11 @@ public class Gymactivity extends AppCompatActivity {
     private void populateScroller(User u
     ){
 
+        GymEvent gEvent = (GymEvent) getIntent().getSerializableExtra("position");
+        if (gEvent != null)
+        {
+            EventList = gEvent.getWorkOuts();
+        }
 
         ArrayList< String > ListViewEvents = new ArrayList< String >();
         for (WorkOut item: EventList) {
@@ -168,12 +173,11 @@ public class Gymactivity extends AppCompatActivity {
     public void AddEvent(View view){
         Long Date =c.getTimeInMillis();
 
-        if ( Date==null) {
-            tv_Date.setError("This Cant be Empty,Click Text to Add Date of Birth");
-            tv_Date.requestFocus();
-            return;
-        }
-        u.getEvents().add(new GymEvent(Date,EventList));
+        Event l = new Event("gym activity", Date);
+        l.setGymEvent(new GymEvent(EventList));
+
+
+        u.getEvents().add(l);
         Firebase f = new Firebase();
         f.DBUser(u);
         Intent intent = new Intent(this, EventListActivity.class);

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MealPlannerEvent implements Serializable {
 
-    private ArrayList displayArr;
+    private ArrayList<String> displayArr;
     private List<Integer> kCalArray;
 
     public MealPlannerEvent() {
@@ -21,16 +21,17 @@ public class MealPlannerEvent implements Serializable {
         this.kCalArray = kCalArray;
     }
 
-    public ArrayList getDisplayArr() {
+
+    public ArrayList<String> getDisplayArr() {
         return displayArr;
+    }
+
+    public void setDisplayArr(ArrayList<String> displayArr) {
+        this.displayArr = displayArr;
     }
 
     public List<Integer> getkCalArray() {
         return kCalArray;
-    }
-
-    public void setDisplayArr(ArrayList displayArr) {
-        this.displayArr = displayArr;
     }
 
     public void setkCalArray(List<Integer> kCalArray) {
