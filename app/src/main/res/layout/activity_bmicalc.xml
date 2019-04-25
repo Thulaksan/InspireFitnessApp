@@ -114,7 +114,7 @@
                 android:onClick="calc"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/Calculate" />
+                app:srcCompat="@drawable/calculate" />
 
             <ImageButton
                 android:id="@+id/finish"

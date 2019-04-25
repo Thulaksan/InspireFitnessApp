@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.google.android.gms:play-services-measurement-api-16.4.0">
     <CLASSES>
-      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.4.0.aar/16441034f22cbaff8a9c33de0ee4ac8d/res" />
-      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.4.0.aar/16441034f22cbaff8a9c33de0ee4ac8d/jars/classes.jar!/" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.4.0.aar/2db923e4d3af076fbcfd2e44a9866261/jars/classes.jar!/" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.4.0.aar/2db923e4d3af076fbcfd2e44a9866261/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
