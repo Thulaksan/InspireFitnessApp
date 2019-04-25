@@ -30,24 +30,9 @@ public class StepTracker extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
 
             String StepsTaken = intent.getStringExtra("Steps");
+
             int Steps = Integer.valueOf(StepsTaken);
-            Double Cal = CalcCal(Steps);
-
-
-
-            Double Ratio = 0.415;
-            Double Hieght_CM = 176.00;
-
-            Double Step_Length = Hieght_CM * Ratio;
-            Double Distance_CM = Step_Length * Step_Length;
-            Double Distance = Distance_CM * 100000;
-            Double Distance_Mile =  Distance / 1.609;
-            Double Seconds_Walked = Distance_Mile / 0.00083333333;
-            Double Minutes = Seconds_Walked / 60;
-            tv_steps.setText(Steps);
-            tv_time.setText(Minutes.toString());
-            tv_distance.setText(Distance.toString());
-            tv_calories.setText(Cal.toString());
+            tv_steps.setText(String.format("you have walked %s", Steps));
         }
     };
     @Override
@@ -56,15 +41,4 @@ public class StepTracker extends AppCompatActivity {
 
         unregisterReceiver(broadcastReceiver);
     }
-
-
-    public Double CalcCal(int Steps){
-        double per  = 0.05;
-        return per* Steps;
-
-
-    }
 }
-
-
-
