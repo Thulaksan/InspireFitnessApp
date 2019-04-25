@@ -11,15 +11,23 @@ import java.util.Calendar;
 public class Event implements Serializable {
     private String Name;
     private Long date;
-    private MealPlannerEvent eventsstore;
+    private MealPlannerEvent meal;
+    private GymEvent gymEvent;
 
-    public Event(String name, Long date, MealPlannerEvent eventsstore) {
-        Name = name;
-        this.date = date;
-        this.eventsstore = eventsstore;
-    }
     public Event() {
 
+    }
+
+    public Event(String name, Long date) {
+        Name = name;
+        this.date = date;
+    }
+
+    public Event(String name, Long date, MealPlannerEvent meal, GymEvent gymEvent) {
+        Name = name;
+        this.date = date;
+        this.meal = meal;
+        this.gymEvent = gymEvent;
     }
 
     public String getName() {
@@ -34,25 +42,23 @@ public class Event implements Serializable {
         return date;
     }
 
-    public String getDateStr() {
-        Calendar c = Calendar.getInstance();
-        c.setTimeInMillis(date);
-        String pattern = "dd-MM-yyyy";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String d = simpleDateFormat.format(c.getTime());
-        return d;
-    }
-
     public void setDate(Long date) {
         this.date = date;
     }
 
-
-    public Object getEventsstore() {
-        return eventsstore;
+    public MealPlannerEvent getMeal() {
+        return meal;
     }
 
-    public void setEventsstore(MealPlannerEvent eventsstore) {
-        this.eventsstore = eventsstore;
+    public void setMeal(MealPlannerEvent meal) {
+        this.meal = meal;
+    }
+
+    public GymEvent getGymEvent() {
+        return gymEvent;
+    }
+
+    public void setGymEvent(GymEvent gymEvent) {
+        this.gymEvent = gymEvent;
     }
 }

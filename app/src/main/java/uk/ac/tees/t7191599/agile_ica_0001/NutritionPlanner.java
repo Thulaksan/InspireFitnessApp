@@ -24,7 +24,7 @@ public class NutritionPlanner extends AppCompatActivity {
     public static TextView kCalComparison;
 
 
-    public static ArrayList displayArr;
+    public static ArrayList<String> displayArr;
     public static List<Integer> kCalArray;
 
     private int reccommendedKcal = 2500;
@@ -132,21 +132,22 @@ public class NutritionPlanner extends AppCompatActivity {
     }
 
     public void AddEvent(View view){
-
         Calendar c = Calendar.getInstance();
         c.getTime();
         c.getTimeInMillis();
 
         Long Date =c.getTimeInMillis();
         MealPlannerEvent mealPlannerEvent = new MealPlannerEvent(displayArr, kCalArray);
+        Event event = new Event("Meal planner", Date);
+        event.setMeal(mealPlannerEvent);
 
-        u.getEvents().add(new Event("Meal planner", Date, mealPlannerEvent));
+        u.getEvents().add(event);
+
         Firebase f = new Firebase();
         f.DBUser(u);
         Intent intent = new Intent(this, EventListActivity.class);
         intent.putExtra("User",u);
         startActivity(intent);
-
     }
 
 }

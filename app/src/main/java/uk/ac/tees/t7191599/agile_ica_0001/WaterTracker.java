@@ -7,7 +7,7 @@ public class WaterTracker extends Event implements Serializable {
     private int WaterAmount;
 
     public WaterTracker(int Water, Long date) {
-        super("Water Update", date, new MealPlannerEvent());
+        super("Water Update", date);
         this.WaterAmount = Water;
     }
 }
