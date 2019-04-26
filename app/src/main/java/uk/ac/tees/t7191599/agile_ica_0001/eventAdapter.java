@@ -50,6 +50,7 @@ public class eventAdapter extends BaseAdapter
         Event selectEvent = events.get(position);
         textViewName.setText(selectEvent.getName());
         textViewdate.setText(selectEvent.getDateStr());
+
         return itemView;
     }
 }

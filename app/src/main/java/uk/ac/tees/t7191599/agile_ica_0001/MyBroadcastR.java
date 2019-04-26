@@ -13,8 +13,7 @@ public class MyBroadcastR extends BroadcastReceiver {
 
          s = new MyService();
         context.startService(new Intent(context, MyService.class));
-        Intent intent = new Intent(context, StepTracker.class);
-        context.startActivity(intent);
+ 
     }
 
     public MyBroadcastR() {
@@ -22,7 +21,6 @@ public class MyBroadcastR extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Its Working", Toast.LENGTH_SHORT).show();
-        s.setPastValue(s.getValue());
+
     }
 }

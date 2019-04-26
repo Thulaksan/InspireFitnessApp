@@ -1,5 +1,7 @@
 package uk.ac.tees.t7191599.agile_ica_0001;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class EventListActivity extends AppCompatActivity {
 
@@ -21,6 +24,17 @@ public class EventListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         populateListView();
+        MyBroadcastR mbr = new MyBroadcastR(getBaseContext());
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent intent = new Intent(this, MyBroadcastR.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 101, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        alarmManager.setExact(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
 
         listViewEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
