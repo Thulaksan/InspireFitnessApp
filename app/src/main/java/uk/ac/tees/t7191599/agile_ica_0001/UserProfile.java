@@ -51,4 +51,10 @@ public class UserProfile extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void back(View view){
+        Intent intent = new Intent(this, EventListActivity.class);
+        intent.putExtra("User",u);
+        startActivity(intent);
+
+    }
 }

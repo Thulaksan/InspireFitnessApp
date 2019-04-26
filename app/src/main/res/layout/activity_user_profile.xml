@@ -1,128 +1,235 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/space_background_1"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.UserProfile">
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.UserProfile"
+    >
 
-    <ImageView
-        android:id="@+id/Iv_ProfilePic"
-        android:layout_width="50dip"
-        android:layout_height="50dip"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        app:srcCompat="@drawable/userpicture" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="15"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/calorieComparisonList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Iv_ProfilePic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
-        android:fontFamily="casual"
-        android:text="User Profile"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp" />
+        <TextView
 
-    <TextView
-        android:id="@+id/tv_Name"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:layout_alignStart="@+id/tv_Email"
-        android:layout_below="@+id/calorieComparisonList"
-        android:layout_marginTop="24dp"
-        android:fontFamily="casual"
-        android:hint="Name"
-        android:textAlignment="center"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text=" Profile"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="40sp"
+            android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/tv_Height"
-        android:layout_width="70dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/tv_DoB"
-        android:layout_marginEnd="26dp"
-        android:layout_marginTop="18dp"
-        android:layout_toStartOf="@+id/tv_Weight"
-        android:fontFamily="casual"
-        android:hint="Hight"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_light_background"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:contentDescription="logo"
+            app:srcCompat="@drawable/propic" />
 
-    <TextView
-        android:id="@+id/tv_DoB"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/tv_Email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:fontFamily="casual"
-        android:hint="Date of Birth"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_light_background"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_Email"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/tv_Name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:fontFamily="casual"
-        android:hint="Email"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_light_background"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_Weight"
-        android:layout_width="70dp"
-        android:layout_height="32dp"
 
-        android:layout_alignBaseline="@+id/tv_Height"
-        android:layout_alignBottom="@+id/tv_Height"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="casual"
-        android:hint="Weight"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_light_background"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tv_BMI"
-        android:layout_width="70dp"
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="Name:"
+                android:textAlignment="textEnd"
+                android:textColor="#ffffff" />
 
-        android:layout_height="32dp"
+            <TextView
+                android:id="@+id/tv_Name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Thomas Black"
+                android:textColor="#ffffff" />
+        </LinearLayout>
 
-        android:layout_alignBaseline="@+id/tv_Weight"
-        android:layout_alignBottom="@+id/tv_Weight"
-        android:layout_toEndOf="@+id/calorieComparisonList"
-        android:fontFamily="casual"
-        android:hint="BMI"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_light_background"
-        android:textColorHint="@color/cardview_light_background"
-        android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/etProfileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="Email"
+                android:textAlignment="textEnd"
+                android:textColor="#ffffff" />
 
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="246dp"
-        android:background="@drawable/common_google_signin_btn_text_dark_normal_background"
-        android:onClick="edit"
-        android:text="Edit Profile" />
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tv_Email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Thomas Black11994@live.com"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Age:"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/tv_DoB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="21"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Weight"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/tv_Weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="21"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Height:"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/tv_Height"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="21"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="BMI:"
+                android:textAlignment="textEnd"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/tv_BMI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="21"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="17"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="edit"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/add2" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="back"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/save" />
+    </LinearLayout>
+
+</LinearLayout>
+
+

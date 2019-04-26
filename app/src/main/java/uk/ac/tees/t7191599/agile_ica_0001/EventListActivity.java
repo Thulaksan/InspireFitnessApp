@@ -24,17 +24,7 @@ public class EventListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         populateListView();
-        MyBroadcastR mbr = new MyBroadcastR(getBaseContext());
-
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        Intent intent = new Intent(this, MyBroadcastR.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 101, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 0);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-        alarmManager.setExact(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+        startService(new Intent(this, MyService.class));
 
         listViewEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

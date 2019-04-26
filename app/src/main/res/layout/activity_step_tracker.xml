@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Today"
+                android:text="All Time"
                 android:textAlignment="center"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="36sp" />
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView"
+                android:text="Steps Done "
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="24sp"
                 tools:text="Steps Done " />
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="102"
+                android:text="Calculating"
                 android:textAlignment="textStart"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="36sp" />
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView"
+                android:text="Distance Walked"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="24sp"
                 tools:text="Distance Walked" />
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="102km"
+                android:text="Calculating"
                 android:textAlignment="textStart"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="36sp" />
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="102"
+                android:text="Calculating"
                 android:textAlignment="textStart"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="36sp" />
@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="102 Minutes"
+                android:text="Calculating"
                 android:textAlignment="textStart"
                 android:textColor="?attr/colorButtonNormal"
                 android:textSize="30sp" />

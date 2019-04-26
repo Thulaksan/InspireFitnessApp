@@ -11,8 +11,7 @@ public class MyBroadcastR extends BroadcastReceiver {
     MyService s;
     public MyBroadcastR(Context context) {
 
-         s = new MyService();
-        context.startService(new Intent(context, MyService.class));
+
  
     }
 
