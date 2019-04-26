@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="com.google.firebase:firebase-database-collection-16.0.1">
     <CLASSES>
-      <root url="file:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/dd065aa43400e76159847bf9838e4ce9/res" />
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/dd065aa43400e76159847bf9838e4ce9/jars/classes.jar!/" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/b454bcefb3576d3e52cc0cd9caf66d7d/jars/classes.jar!/" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/b454bcefb3576d3e52cc0cd9caf66d7d/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database-collection/16.0.1/b5886c1473251920abb7253028aafb63b2d5e0a5/firebase-database-collection-16.0.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES />
   </library>
 </component>

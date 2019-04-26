@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="com.google.android.gms:play-services-measurement-sdk-api-16.4.0">
     <CLASSES>
-      <root url="file:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-16.4.0.aar/8222a5dcd6d6b19e4a1ed56a332f57ca/res" />
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-16.4.0.aar/8222a5dcd6d6b19e4a1ed56a332f57ca/jars/classes.jar!/" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-16.4.0.aar/cca87202133f63faae609572be43b651/res" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-16.4.0.aar/cca87202133f63faae609572be43b651/jars/classes.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement-sdk-api/16.4.0/b0889362b29c0c1a24c5af14e126d069e86c2644/play-services-measurement-sdk-api-16.4.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES />
   </library>
 </component>
