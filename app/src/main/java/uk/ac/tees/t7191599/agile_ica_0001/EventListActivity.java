@@ -19,6 +19,7 @@ public class EventListActivity extends AppCompatActivity {
     private eventAdapter adapter;
     private ListView listViewEvents;
     private ArrayList<Event> events ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +59,6 @@ public class EventListActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
     public void populateListView()
     {
@@ -96,5 +93,4 @@ public class EventListActivity extends AppCompatActivity {
         intent.putExtra("User",u);
         startActivity(intent);
     }
-
 }
