@@ -15,7 +15,26 @@ public class User implements Serializable {
     private Long DoB;
      private Body_Details Current;
     private  ArrayList<Body_Details> BodyHistory = new ArrayList<Body_Details>();
+
+    public ArrayList<SleepTracler> getSleep() {
+        return Sleep;
+    }
+
+    public void setSleep(ArrayList<SleepTracler> sleep) {
+        Sleep = sleep;
+    }
+
+    public ArrayList<WaterTracker> getWater() {
+        return Water;
+    }
+
+    public void setWater(ArrayList<WaterTracker> water) {
+        Water = water;
+    }
+
     private ArrayList<Event> Events = new ArrayList<Event>();
+    private ArrayList< SleepTracler > Sleep = new ArrayList<SleepTracler  >();
+    private ArrayList< WaterTracker > Water = new ArrayList< WaterTracker >();
     private ArrayList< WorkOut > CommonWorkOut = new ArrayList< WorkOut >();
 
     public ArrayList< WorkOut >  getCommonWorkOut() {

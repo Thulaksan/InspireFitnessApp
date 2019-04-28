@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Powerman984 on 27/02/2019.
@@ -49,6 +51,12 @@ public class eventAdapter extends BaseAdapter
         TextView textViewdate = (TextView) itemView.findViewById(R.id.textView_date);
         Event selectEvent = events.get(position);
         textViewName.setText(selectEvent.getName());
+        long val = selectEvent.getDate();
+        Date date=new Date(val);
+        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy");
+        String dateText = df2.format(date);
+        textViewdate.setText(dateText);
+
         return itemView;
     }
 }

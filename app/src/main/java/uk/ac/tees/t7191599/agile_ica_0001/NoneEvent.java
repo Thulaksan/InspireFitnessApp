@@ -2,8 +2,8 @@ package uk.ac.tees.t7191599.agile_ica_0001;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,9 +15,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CreateEventActivity extends AppCompatActivity {
-    ListView lv;
-    String[] eventTypes = new String[]{"Gym Event","Meal Plan","Health Tracker"};
+public class NoneEvent extends AppCompatActivity {  ListView lv;
+    String[] eventTypes = new String[]{"Step Tracker", "BMI Calc","BMI Graph","Gyms Near Me","Tutorials","Sleep Graph","Water Graph"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,22 +47,40 @@ public class CreateEventActivity extends AppCompatActivity {
 
                 switch (position) {
                     case 0:
-                        intent = new Intent(view.getContext(), Gymactivity.class);
+                        intent = new Intent(view.getContext(), StepTracker.class);
                         intent.putExtra("User",u);
                         startActivity(intent);
                         break;
-
                     case 1:
-                        intent = new Intent(view.getContext(), NutritionPlanner.class);
+                        intent = new Intent(view.getContext(), BmiVisual.class);
                         intent.putExtra("User",u);
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(view.getContext(), HealthTracker.class);
+                        intent = new Intent(view.getContext(), BMICalcActivity.class);
                         intent.putExtra("User",u);
                         startActivity(intent);
                         break;
-
+                    case 3:
+                        intent = new Intent(view.getContext(), MapsActivity.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(view.getContext(), toutoralPage.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(view.getContext(), SleepVisual.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(view.getContext(), WaterVisual.class);
+                        intent.putExtra("User",u);
+                        startActivity(intent);
+                        break;
                     default:
                         break;
                 }

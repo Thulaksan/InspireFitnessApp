@@ -34,8 +34,9 @@ public class BMICalcActivity extends AppCompatActivity {
         String h = et_height.getText().toString().trim();
         String w = et_weight.getText().toString().trim();
         Double height = Double.parseDouble(h);
+        Double hi = height/100;
         Double weight = Double.parseDouble(w);
-        Double BMI= weight/(height* height);
+        Double BMI= weight/(hi* hi);
         String BMIStat="";
 
         if(BMI>30){

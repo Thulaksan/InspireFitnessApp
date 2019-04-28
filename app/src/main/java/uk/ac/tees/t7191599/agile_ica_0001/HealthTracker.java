@@ -29,7 +29,12 @@ public class HealthTracker extends AppCompatActivity {
             String w =et_Water.getText().toString().trim();
             int Water = Integer.parseInt(w);
             WaterTracker x = new WaterTracker(Water,Date);
-            u.getEvents().add(x);
+            Event e = new Event();
+            e.setWt(x);
+            u.getEvents().add(e);
+            u.getWater().add(x);
+
+
 
         }
 
@@ -38,8 +43,11 @@ public class HealthTracker extends AppCompatActivity {
         String s =et_Sleep.getText().toString().trim();
         int Sleep = Integer.parseInt(s);
         SleepTracler x = new SleepTracler(Sleep,Date);
-        u.getEvents().add(x);
+        Event e = new Event("Sleep",Date);
+        e.setSt(x);
 
+        u.getEvents().add(e);
+        u.getSleep().add(x);
     }
 
     public void Finish(View view){

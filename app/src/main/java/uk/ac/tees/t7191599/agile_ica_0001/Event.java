@@ -14,6 +14,25 @@ public class Event implements Serializable {
     private MealPlannerEvent meal;
     private GymEvent gymEvent;
 
+    public SleepTracler getSt() {
+        return st;
+    }
+
+    public void setSt(SleepTracler st) {
+        this.st = st;
+    }
+
+    public WaterTracker getWt() {
+        return wt;
+    }
+
+    public void setWt(WaterTracker wt) {
+        this.wt = wt;
+    }
+
+    private SleepTracler st;
+    private WaterTracker wt;
+
     public Event() {
 
     }

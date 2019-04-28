@@ -53,12 +53,12 @@ public class MyService extends Service implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        Toast.makeText(this, "Sen Change", Toast.LENGTH_SHORT).show();
+
         float[] values;
         values = event.values;
         value = (int) values[0];
         value = value - PastValue;
-        Toast.makeText(this, "Values is "+value, Toast.LENGTH_SHORT).show();
+        
         Intent i = new Intent("Steps");
         i.putExtra("Steps", String.valueOf(value));
         sendBroadcast(i);

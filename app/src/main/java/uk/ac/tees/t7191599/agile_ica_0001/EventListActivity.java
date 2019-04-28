@@ -92,7 +92,7 @@ public class EventListActivity extends AppCompatActivity {
     }
     public void viewVideos(View view){
         User u = (User) getIntent().getSerializableExtra("User");
-        Intent intent = new Intent(this,toutoralPage.class);
+        Intent intent = new Intent(this,NoneEvent.class);
         intent.putExtra("User",u);
         startActivity(intent);
     }
