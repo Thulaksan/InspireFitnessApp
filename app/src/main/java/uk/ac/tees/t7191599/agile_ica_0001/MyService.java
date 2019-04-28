@@ -58,7 +58,7 @@ public class MyService extends Service implements SensorEventListener {
         values = event.values;
         value = (int) values[0];
         value = value - PastValue;
-        
+
         Intent i = new Intent("Steps");
         i.putExtra("Steps", String.valueOf(value));
         sendBroadcast(i);

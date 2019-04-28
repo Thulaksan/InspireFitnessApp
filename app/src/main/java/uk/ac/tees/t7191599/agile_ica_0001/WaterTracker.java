@@ -28,5 +28,8 @@ public class WaterTracker implements Serializable {
         this.Date = date;
         this.WaterAmount = Water;
     }
+    public WaterTracker() {
+
+    }
 }
 

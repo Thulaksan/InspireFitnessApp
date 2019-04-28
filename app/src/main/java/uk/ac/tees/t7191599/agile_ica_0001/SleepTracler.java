@@ -27,6 +27,7 @@ public class SleepTracler implements Serializable {
         this.date = date;
         this.SleepAmount = Sleep;
     }
-
+    public SleepTracler() {
+    }
 }
 
