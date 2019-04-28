@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
-public class thomasStepTracker extends AppCompatActivity {
+public class StepTracker extends AppCompatActivity {
     TextView tv_steps,tv_time,tv_distance,tv_calories;
 
     @Override
