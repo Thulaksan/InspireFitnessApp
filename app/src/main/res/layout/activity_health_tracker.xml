@@ -85,15 +85,16 @@
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/cardView"
-            android:layout_marginBottom="23dp">
+            android:layout_marginBottom="23dp"
+            android:onClick="Finish">
 
             <TextView
                 android:id="@+id/textView3"
-                android:onClick="Finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:onClick="Finish"
                 android:text="Finish" />
         </RelativeLayout>
 
@@ -112,7 +113,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="Sleep">
 
             <TextView
                 android:id="@+id/textView5"
@@ -137,7 +139,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="Water">
 
             <TextView
                 android:id="@+id/textView6"

@@ -13,13 +13,14 @@ public class HealthTracker extends AppCompatActivity {
     EditText et_Sleep,et_Water;
     User u;
     Firebase firebase= new Firebase();
-    Long Date = Calendar.getInstance().getTimeInMillis();
+    Long Date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tracker);
         u = (User) getIntent().getSerializableExtra("User");
+        Date = Calendar.getInstance().getTimeInMillis();
     }
 
 
@@ -35,7 +36,7 @@ public class HealthTracker extends AppCompatActivity {
         }
             int Water = Integer.parseInt(w);
             WaterTracker x = new WaterTracker(Water,Date);
-            Event e = new Event();
+            Event e = new Event("Water",Date);
             e.setWt(x);
             u.getEvents().add(e);
             u.getWater().add(x);
