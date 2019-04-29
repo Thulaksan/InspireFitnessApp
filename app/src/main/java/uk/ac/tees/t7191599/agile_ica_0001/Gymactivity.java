@@ -90,8 +90,9 @@ public class Gymactivity extends AppCompatActivity {
         }
 
         ListAdapter LA = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,ListViewEvents);
+        ListAdapter  adapter = new ArrayAdapter(this, R.layout.listrow, R.id.textView2, ListViewEvents);
         ListView Scroll = (ListView) findViewById(R.id.Scroll);
-        Scroll.setAdapter(LA);
+        Scroll.setAdapter(adapter);
 
 
     }

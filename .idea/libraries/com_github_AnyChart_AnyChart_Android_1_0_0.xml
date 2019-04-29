@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.github.AnyChart:AnyChart-Android-1.0.0">
     <CLASSES>
-      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/AnyChart-Android-1.0.0.aar/186188cc066edbb5983b2e8c7114fa1b/jars/classes.jar!/" />
-      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/AnyChart-Android-1.0.0.aar/186188cc066edbb5983b2e8c7114fa1b/res" />
+      <root url="file:///home/scm-studs/t7191599/.gradle/caches/transforms-1/files-1.1/AnyChart-Android-1.0.0.aar/e692dec824f242b462a2061d64c08197/res" />
+      <root url="jar:///home/scm-studs/t7191599/.gradle/caches/transforms-1/files-1.1/AnyChart-Android-1.0.0.aar/e692dec824f242b462a2061d64c08197/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

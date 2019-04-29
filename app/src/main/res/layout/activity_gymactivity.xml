@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/space_background_1"
-    tools:context="uk.ac.tees.t7191599.agile_ica_0001.EventListActivity"
+    tools:context="uk.ac.tees.t7191599.agile_ica_0001.Gymactivity"
     >
 
     <LinearLayout
@@ -181,6 +181,7 @@
         android:layout_weight="3"
         android:background="@null"
         android:scaleType="fitCenter"
+        android:onClick="AddEvent"
         app:srcCompat="@drawable/workout" />
 
 </LinearLayout>
