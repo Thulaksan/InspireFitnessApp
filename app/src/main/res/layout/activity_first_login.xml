@@ -69,13 +69,13 @@
         android:layout_below="@+id/et_DoB"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:ems="10"
         android:background="#1000"
+        android:ems="10"
+        android:hint="Height in CM"
+        android:inputType="numberDecimal"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/cardview_light_background"
-        android:hint="Height in Meters"
-        android:textSize="24dip"
-        android:inputType="numberDecimal" />
+        android:textSize="24dip" />
     <EditText
         android:id="@+id/et_Weight"
         android:layout_width="wrap_content"
