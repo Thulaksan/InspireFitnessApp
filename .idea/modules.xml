@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///home/scm-studs/t7066356/AndroidStudioProjects/agile_dev/agile_dev.iml" filepath="/home/scm-studs/t7066356/AndroidStudioProjects/agile_dev/agile_dev.iml" />
       <module fileurl="file://$PROJECT_DIR$/agile_dev.iml" filepath="$PROJECT_DIR$/agile_dev.iml" />
       <module fileurl="file://$PROJECT_DIR$/agile_dev1.iml" filepath="$PROJECT_DIR$/agile_dev1.iml" />
       <module fileurl="file://$PROJECT_DIR$/agile_dev2.iml" filepath="$PROJECT_DIR$/agile_dev2.iml" />
-      <module fileurl="file:///home/scm-studs/t7066356/AndroidStudioProjects/agile_dev/app/app.iml" filepath="/home/scm-studs/t7066356/AndroidStudioProjects/agile_dev/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
