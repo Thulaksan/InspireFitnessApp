@@ -27,6 +27,12 @@ public class HealthTracker extends AppCompatActivity {
 
             et_Water = findViewById(R.id.et_weight);
             String w =et_Water.getText().toString().trim();
+
+        if (w ==null) {
+            et_Water.setError("This Cant be Empty");
+            et_Water.requestFocus();
+            return;
+        }
             int Water = Integer.parseInt(w);
             WaterTracker x = new WaterTracker(Water,Date);
             Event e = new Event();
@@ -40,7 +46,13 @@ public class HealthTracker extends AppCompatActivity {
 
     public void Sleep(View view){
         et_Sleep = findViewById(R.id.et_height);
-        String s =et_Sleep.getText().toString().trim();
+        String s = et_Sleep.getText().toString().trim();
+
+        if (s ==null) {
+            et_Sleep.setError("This Cant be Empty");
+            et_Sleep.requestFocus();
+            return;
+        }
         int Sleep = Integer.parseInt(s);
         SleepTracler x = new SleepTracler(Sleep,Date);
         Event e = new Event("Sleep",Date);
