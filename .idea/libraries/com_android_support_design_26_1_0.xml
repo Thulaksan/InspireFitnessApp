@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="com.android.support:design-26.1.0">
     <CLASSES>
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/bebb0c3e55fc3af703d91344c80e202c/jars/classes.jar!/" />
-      <root url="file:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/bebb0c3e55fc3af703d91344c80e202c/res" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10bb1cbb4605e22c873fc1612965b26f/jars/classes.jar!/" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10bb1cbb4605e22c873fc1612965b26f/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/modules-2/files-2.1/com.android.support/design/26.1.0/c7ac62df01dd0a97d93500ad3da7faebf03ba49/design-26.1.0-sources.jar!/" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/modules-2/files-2.1/com.android.support/design/26.1.0/c7ac62df01dd0a97d93500ad3da7faebf03ba49/design-26.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

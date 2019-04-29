@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="com.android.support.test:rules-1.0.2">
     <CLASSES>
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/rules-1.0.2.aar/8d7db5666a6c3ea49461a9322226229b/jars/classes.jar!/" />
-      <root url="file:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/rules-1.0.2.aar/8d7db5666a6c3ea49461a9322226229b/res" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/rules-1.0.2.aar/d4ce6c4206882ff565eb4cb8b90fa6c2/res" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/rules-1.0.2.aar/d4ce6c4206882ff565eb4cb8b90fa6c2/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/modules-2/files-2.1/com.android.support.test/rules/1.0.2/6a090af62c13f8c82c3ee631d8b766f5e025a0ac/rules-1.0.2-sources.jar!/" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/modules-2/files-2.1/com.android.support.test/rules/1.0.2/6a090af62c13f8c82c3ee631d8b766f5e025a0ac/rules-1.0.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

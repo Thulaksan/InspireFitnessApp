@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="com.android.support:transition-26.1.0">
     <CLASSES>
-      <root url="file:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9b50e9cecf922228ba215f32b058fb0d/res" />
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9b50e9cecf922228ba215f32b058fb0d/jars/classes.jar!/" />
+      <root url="file:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/ccfa495f05ebfbec5427a729ba64cf5a/res" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/ccfa495f05ebfbec5427a729ba64cf5a/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///home/scm-studs/t7207089/.gradle/caches/modules-2/files-2.1/com.android.support/transition/26.1.0/bf675688e3ad5a0b68c627efa77de94822af2610/transition-26.1.0-sources.jar!/" />
+      <root url="jar:///home/scm-studs/t7066356/.gradle/caches/modules-2/files-2.1/com.android.support/transition/26.1.0/bf675688e3ad5a0b68c627efa77de94822af2610/transition-26.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
